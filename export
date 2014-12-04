@@ -1,0 +1,23 @@
+# cheat config
+export EDITOR='emacsclient'
+export CHEATCOLORS=true
+
+# Java config
+export JAVA_HOME=/usr/lib/jvm/jdk
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=.:~/bin:${JAVA_HOME}/bin:${PATH}
+
+# add user bin to path
+export PATH=$HOME/bin:${PATH}
+
+# ANT config
+export ANT_HOME=/usr/lib/ant
+export PATH=${ANT_HOME}/bin:$PATH
+
+# GRADLE config
+export GRADLE_HOME=/usr/lib/gradle
+export PATH=${GRADLE_HOME}/bin:$PATH
+
+# RVM config
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
