@@ -1,0 +1,30 @@
+# Bash Synx
+var1 = 3                              #variable assignment
+var2 = "Test"                         #variable assignment
+echo $var1                            #print a var
+$?                                    #Stores the exit value of the last command that was executed.
+" "                                   #ignore whitespace, count all as one arg or string
+' '                                   #ignore special characters
+` `                                   #use result of a command executed between back-ticks
+int1 -eq int2                         #Returns True if int1 is equal to int2.
+int1 -ge int2                         #Returns True if int1 is greater than or equal to int2.
+int1 -gt int2                         #Returns True if int1 is greater than int2.
+int1 -le int2                         #Returns True if int1 is less than or equal to int2
+int1 -lt int2                         #Returns True if int1 is less than int2
+int1 -ne int2                         #Returns True if int1 is not equal to int2
+str1 = str2                           #Returns True if str1 is identical to str2.
+str1 != str2                          #Returns True if str1 is not identical to str2.
+str                                   #Returns True if str is not null.
+-n str                                #Returns True if the length of str is greater than zero.
+-z str                                #Returns True if the length of str is equal to zero (zero is not null!)
+-d filename                           #Returns True if file, filename is a directory.
+-f filename                           #Returns True if file, filename is an ordinary file.
+-r filename                           #Returns True if file, filename can be read by the process.
+-s filename                           #Returns True if file, filename has a nonzero length.
+-w filename                           #Returns True if file, filename can be written by the process.
+-x filename                           #Returns True if file, filename is executable.
+!expression                           #Returns true if expression is not true
+expr1 -a expr2                        #Returns True if expr1 and expr2 are true. ( && , and )
+expr1 -o expr2                        #Returns True if expr1 or expr2 is true. ( ||, or )
+arr1=(val1 val2 ...)                  #arrays
+arr1[2]                               #retrieve second element

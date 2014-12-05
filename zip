@@ -1,0 +1,5 @@
+# Create .zip files
+zip -r {output.zip} {folder}
+
+# Extract .zip files to directory
+unzip {input.zip} -d {folder}

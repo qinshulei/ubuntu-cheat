@@ -1,0 +1,50 @@
+# marks dir as package. allows imports from any cwd
+__init__.py
+
+# returns names in current scope
+dir()
+
+# get help on class `sring`
+help("string")
+
+# convert to integer
+int(somestring)
+
+# change current dir
+os.chdir('C\\Users')
+
+# get current working directory
+os.getcwd
+
+# checks if file 1.c exists in directory d in the current dir
+os.path.isfile("d/1.c")
+
+# show HOME environment variable
+print os.environ['HOME']
+
+# produce a list from and including x to an including y-1
+range(x, y)
+
+# pause execution for x seconds
+time.sleep(x)
+
+# Show variable type
+type(myvar)
+
+# class of x returned as string
+x.__class__.__name__
+
+# print a list of all available modules
+help('modules')
+
+# using pip CLI tool. shows user installed packages
+pip freeze
+
+# a file containing Python definitions and statements, with the .py extension
+module
+
+# a directory of python module(s); can have nested structure with sub-packages
+package
+
+PACKAGES AND MODULES
+Any Python file is a module, its name being the file's base name without the .py extension. A package is a collection of Python modules: while a module is a single Python file, a package is a directory of Python modules containing an additional __init__.py file, to distinguish a package from a directory that just happens to contain a bunch of Python scripts. Packages can be nested at any deep, providing that the corresponding directories contain their own __init__.py file.

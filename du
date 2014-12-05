@@ -1,0 +1,5 @@
+# To sort directories/files by size
+du -sk *| sort -rn
+
+# Check for size of folders in current working directory
+du -h --max-depth=1

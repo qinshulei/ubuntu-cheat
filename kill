@@ -1,0 +1,5 @@
+# Kill a process:
+kill {pid}
+
+# kill a application
+kill -9 $( ps -C 'emacs --daemon' -o pid= )

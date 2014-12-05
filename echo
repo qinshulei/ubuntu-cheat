@@ -1,0 +1,2 @@
+# Inspect the current PATH variables
+echo $PATH

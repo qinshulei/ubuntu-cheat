@@ -39,4 +39,6 @@ git clone https://coding.net/qinshulei/ubuntu-cheat.git ~/.cheat
 ## ubuntu-cheat 的内容
 + 会慢慢收集，自己工作中会用到，但不值得记忆的命令。
 + 尽量记录一些足够通用的命令
++ cheat 分两种：一种是命令，全小写命名。一种是知识点，以驼峰式命名。
++ 每个命令的cheat，尽量不超过终端全屏下的一个屏幕。知识点的cheat原则上不限长度，但每个主题都尽量间断，方便ack或者grep查找。
 + 欢迎大家的补充

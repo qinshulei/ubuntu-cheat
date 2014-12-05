@@ -1,0 +1,18 @@
+# Based on http://www.pathname.com/fhs/pub/fhs-2.3.html
+/bin           #common binaries for all: ls, ps, ping, grep
+/sbin          #binaries for sysadmin, maintenance: iptables, rebood, fdisk
+/etc           #config files for programs, start up and shut down scripts
+/dev           #device files, like terminal device, usb, or any device attached to system
+/proc          #virtual file system that contains info about processes. e.g. /proc/uptime, /proc/{pid}
+/var           #files that are expected to grow, system logs, packages, databases, emails, print queues
+/tmp           #temp files created by system and user. deleted on reboot
+/usr           #shareable read only data. contains only sub dirs
+/usr/          #lib files not to be executed directly by users or shell scripts
+/usr/          #local for use by sysadmin when installing software locally
+/home          #home directories of users
+/boot          #boot loader related files.
+/lib           #files that support binaries in /bin and /sbin. Files end in .ld or .so
+/opt           #add-on applications from individual vendors
+/mnt           #temp dir where sysadmins can mount filesystems
+/media         #temp dir for removable devices
+/srv           #contains server specific services related data
