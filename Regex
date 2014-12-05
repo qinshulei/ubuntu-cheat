@@ -1,0 +1,34 @@
+#META CHARACTERS
+.           #matches any single char except newline character
+*           #match previous char zero or more times. is greedy.
+
+#examples:
+ca*t        #will match ct, cat, caat, caaat, and so on
+a[bcd]*b    #will match abcb in abcbd
++           #match one or more times the previous char
+?           #matches previous char/set once or zero times
+{m, n}      #matches previous set/char repeated at least m times and at most n times
+
+#META CHARACTERS
+\           #Used to escape the meta-chars, and use them literally or use special sequences
+
+#examples:
+\s          #matches any whitespace char. equivalent to [ \t\n\r\f\v]
+\S          #matches any non-whitespace char
+\w          #matches any alpha-numeric char
+\A          #matches the beginning of a (multi-line) string. Not the same as ^ in multi-line strings
+\Z          #matches the end of string
+\b          #word boundary. a word is a sequence of alpha-numeric chars. end of word is a whitespace or non-alphanumeric char. \bfoo\b will match the word foo
+
+#META CHARACTERS
+\1          #back reference group 1
+[]          #Specifies a set of characters to match. Meta-chars are not active inside '[]'
+
+#examples:
+[^5]        #will match all chars except 5
+[^A-Z]      #will match all except A-Z
+[\s,.]      #matches any whitespace, comma, or dot
+^           #Matches the beginning of a line
+$           #Matches the end of a line
+|           #given two regular Expression A and B, A|B matches either A or B (or both?)
+()          #used to group chars. can be nested

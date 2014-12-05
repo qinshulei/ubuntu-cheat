@@ -1,0 +1,52 @@
+DEFINITIONS
+HEAD                                    #pointer to the last commit. cat .git/HEAD shows where it points to
+index                                   #aka staging area. contains files to be commited, added with git add
+
+COMMANDS
+git --abbrev-commit --pretty=online     #shows short commit numbers; one line per commit
+git add -u                              #update. ensures that also deleted files will be gone from remote/repo
+git add <file>                          #add untracked to tracked work. tree or add tracked work. tree to index
+git clean [-f, -n] -f                   #delete untracked files. -n shows what will be deleted
+git clone https://...repo.git           #clone git repo (files + .git/ + configuration) and start working
+git commit -m "commit message"          #commit staged files
+git config --global user.email "m@e.ch  #set email
+git config --global user.name           #set user's name
+git init                                #initialize a repo
+git pull origin                         #pull changes, made to origin after cloning, and merge
+git push origin master [--force]        #send the commits to remote, force if necessary
+git remote                              #lists remote aliases
+git remote -v                           #lists remote aliases with the url
+git remote add origin <url of .git>     #add remote with the name origin
+git remote show origin                  #show info of remote with the alias `origin`
+git reset --hard                        #reset index and work. tree; tracked files reverted to (last) <commit>
+git rm --cached file.txt                #remove file.txt from stage, but leave locally
+git rm -r --cached ./                   #untrack all files in the dir
+git status                              #show which files will be commited
+git status                              #shows the status obv.
+
+CREATE A GITHUB REPO AND CLONE TO LOCAL MACHINE
+- create a repo 'some-project-name' on Github and initialize it (to use clone later on)
+- in terminal 'git clone https://github/me/some-project-name
+- edit the README.md file
+- git commit -m "first commit"
+- git push origin master
+
+SCENARIO 1
+- I am on a brand new computer and want to work on a repo https://github.com/Dmitrii-I/somerepo.git
+- simply run `git clone https://github.com/Dmitrii-I/somerepo.git`
+- this above also sets up remote with alias `origin` pointing to https://github.com/Dmitrii-I/somerepo.git
+
+SCENARIO 2
+- I am on PC 1 whwere I worked before on a repo
+- Last commits to remote were made from PC 2
+- How can I update my local repo on PC 1 to reflect the remote repo?
+- run 'git pull origin master' and then 'git fetch'
+- git fetch is needed to avoid false message 'you commit is ahead of origin/master by x...'
+
+SCENARIO 3
+- you're local repo is one commit behind from remote
+- you work some and have changes in tracked files, and have new untracked files
+- you would like to sync local repo to remote, discarding any changes in local after last commit
+- git reset --hard will get rid of changes in tracked files
+- git clean -f will delete untracked files
+- git pull will sync local repo with remote"
