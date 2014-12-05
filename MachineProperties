@@ -1,8 +1,4 @@
-# Modify the host name
-sudo nano /etc/hostname
-
-# Set a static IP address
-sudo nano /etc/network/interfaces
-
-# Modify hosts
-sudo nano /etc/hosts
+# etc config
+sudo vi /etc/hostname                               # Modify the host name
+sudo vi /etc/network/interfaces                     # Set a static IP address
+sudo vi /etc/hosts                                  # Modify hosts

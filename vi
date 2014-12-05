@@ -1,17 +1,2 @@
-Key                     Effect
-a, i                    Go into insert mode
-<ESC>                   Go out of insert mode
-:w, :q, :wq             Save, quit, or save and quit
-:q!                     Quit while discarding your changes
-h, j, k, l              Move around in the file
-e, w, b                 Move horizontally by word
-^, $                    Go to start or end of line
-gg, G                   Go to start or end of file
-dd                      Cut line
-d$, d^, de, dw, db ...  Contextual cut
-p                       Paste whatever was cut
-
-----------------------------------------------------------------------
-
 # save readonly file
 :w sudo tee %
