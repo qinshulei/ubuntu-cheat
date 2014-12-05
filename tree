@@ -1,0 +1,2 @@
+# show directory with tree
+tree -L 2 | less -MN
