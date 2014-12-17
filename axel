@@ -1,0 +1,3 @@
+# axel : multithread download tools
+
+axel -n 50 https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box  # Download vagrant box ubuntu12.04 file ,50 threads

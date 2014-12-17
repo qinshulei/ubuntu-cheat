@@ -1,2 +1,2 @@
-#set the shell
+# set the shell
 sudo usermod -s /bin/bash myuser
