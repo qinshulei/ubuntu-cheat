@@ -1,0 +1,11 @@
+# 最大限制为 12M
+rar a -m5 -v12m myarchive myfiles
+
+#解压
+rar e myarchive.part1.rar
+
+# 分卷压缩
+rar a -vSIZE  压缩后的文件名 被压缩的文件或者文件夹
+
+# 此命令即为对eclipse文件夹进行分卷压缩，每卷的大小为50000k，压缩后的文件名为eclipse.rar
+rar a -v50000k eclipse.rar eclipse
