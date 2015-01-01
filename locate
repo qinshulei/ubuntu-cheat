@@ -1,0 +1,5 @@
+# update db everyday
+updatedb
+
+# locate file
+locate filename
