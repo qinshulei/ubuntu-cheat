@@ -44,3 +44,16 @@ set +x
 less <<< "foo bar"
 
 # ctrl-x ctrl-e opens editor to work on long complex command
+
+# split with space
+IFS="  "
+for LINE in `cat /etc/passwd`
+do
+        echo $LINE
+done
+
+# read line
+while read LINE
+do
+        echo $LINE
+done < /etc/passwd

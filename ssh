@@ -19,8 +19,18 @@ ssh -D 9999 user@example.com
 # -X use an xsession, -C compress data, "-c blowfish" use the encryption blowfish
 ssh user@example.com -C -c blowfish -X
 
+# SSH: Port Forwarding
+ssh -qTfnN -L port:host:hostport -l user remote_ip
+ssh -qTfnN -R port:host:hostport -l user remote_ip
+
 # ssh proxy
 ssh -qTfnN -D 7070 username@sshserver
+
+# ssh local forward
+ssh -CfNg -L 6300:127.0.0.1:1521 oracle@172.16.1.164
+
+# ssh remote forward
+ssh -CfNg -R 1521:127.0.0.1:6300 oracle@172.16.1.164
 
 # For more information, see:
 # http://unix.stackexchange.com/q/12755/44856
