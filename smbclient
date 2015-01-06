@@ -1,0 +1,3 @@
+smbclient -L 192.168.65.12 --user=qinsl0106       # show smb directory
+
+smbclient //192.168.65.12/Department -U qinsl0106            # open smb like ftp
