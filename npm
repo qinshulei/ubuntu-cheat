@@ -1,0 +1,12 @@
+npm config set proxy http://server:port
+npm config set https-proxy http://server:port
+
+npm config set proxy http://username:password@server:port
+npm config set https-proxy http://username:pawword@server:port
+
+npm config set registry "http://registry.npmjs.org/"
+
+alias cnpm="npm --registry=http://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=http://dist.cnpmjs.org \
+--userconfig=$HOME/.cnpmrc"

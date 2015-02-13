@@ -1,0 +1,130 @@
+#!/bin/bash
+#: Title                  : xxx.bash
+#: Usage                  : xxx.bash [-m] [-i item] target
+#: Synopsis               : for bash script setup
+#: Date                   : 2015-02-13 11:23:04
+#: Author                 : shulei
+#: version                : 1.0
+#: Description            : be used to setup bash script for jenkins job or daily bash script
+#: Required               : target => which target
+#: Options                : -i set items
+#:                        : -m set log
+#:                        : -h show usage
+
+#########################################################################################
+# ---------------------- import lib    -------------------------------------------------#
+#########################################################################################
+# import bsfl lib
+source ~/lib/bash_lib/bsfl
+
+#########################################################################################
+# ---------------------- main function -------------------------------------------------#
+#########################################################################################
+function main() {
+    cd_to_script_path
+    init_params "$@"
+    print_params
+    sleep_1_minute_for_check_params
+
+    ## start process
+    do_process
+}
+
+#####################################################################################
+#-------------------------------logic function--------------------------------------#
+#####################################################################################
+function show_usage {
+    cat <<- _EOF_
+
+A init template for bash script
+
+Examples:
+    $ xxx.bash [-m] [-i item] target
+
+_EOF_
+    exit 1
+}
+
+function init_params() {
+    ## init parameters
+    ## constant and deault value
+    MESSAGE_ENABLED=no
+    items=()
+    target=
+
+    init_value_from_env
+    init_value_from_opts "$@"
+
+    ## check the parameters
+    if is_null_or_empty target;then
+        if is_null_or_empty TARGET;then
+            show_usage
+            die 1 "must input the target!"
+        else
+            #use env target
+            target="${TARGET}"
+        fi
+    fi
+}
+
+function init_value_from_env() {
+    ## base on enviroment , set default items value .
+    is_true ITEM_ENABLED   && items[${#items[*]}]=Item
+}
+
+function init_value_from_opts() {
+    ## parse command-line options
+    while getopts "hmc:" var
+    do
+        case $var in
+            m) MESSAGE_ENABLED=y
+               ;;
+            h) show_usage
+               ;;
+            c)
+                if contains ${items[*]} "${OPTARG}";then
+                    option_enabled MESSAGE_ENABLED && printf "env has contains this items : %s \n" "${OPTARG}"
+                else
+                    items[${#items[*]}]=${OPTARG}
+                fi
+                ;;
+        esac
+    done
+    shift $(( OPTIND - 1 ))
+    target=${1}
+}
+
+function print_params(){
+    option_enabled MESSAGE_ENABLED && printf "selected items : %s\n" "${items[*]}"
+    option_enabled MESSAGE_ENABLED && printf "target : %s\n" "${target}"
+}
+
+function do_process(){
+    if contains ${items[*]} "item";then
+        option_enabled MESSAGE_ENABLED && printf "========== start process  : %s\n" "item"
+        # do something
+    fi
+}
+
+#####################################################################################
+#----------------------------common function ---------------------------------------#
+#####################################################################################
+function sleep_1_minute_for_check_params() {
+    option_enabled MESSAGE_ENABLED && echo "============================================================"
+    option_enabled MESSAGE_ENABLED && echo "sleep 1 minute, for check params again"
+    sleep 1m
+    option_enabled MESSAGE_ENABLED && echo "sleep end, start process"
+    option_enabled MESSAGE_ENABLED && echo "============================================================"
+}
+
+function cd_to_script_path() {
+    ## Script path
+    script_path="${0%/*}"  # remove the script name ,get the path
+    script_path=${script_path/\./$(pwd)} # if path start with . , replace with $PWD
+    cd "${script_path}"
+}
+
+### ------------------------ start -----------------------------
+__ORIGIN_PATH__="$PWD"
+main "$@"
+cd "$__ORIGIN_PATH__"
