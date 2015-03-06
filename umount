@@ -1,0 +1,2 @@
+# umount the disk
+sudo umount /media/disk
