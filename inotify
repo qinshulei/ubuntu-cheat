@@ -1,0 +1,17 @@
+# the inotify script example
+#!/bin/bash
+inotifywait -mrq --timefmt '%d/%m/%y %H:%M' \
+            --format  '%T %w%f %e' \
+            --event modify,delete,create,attrib  /tmp \
+    | while read  date time file event
+      do
+          case $event in
+              MODIFY|CREATE|MOVE|MODIFY,ISDIR|CREATE,ISDIR|MODIFY,ISDIR)
+                  echo $event'-'$file
+                  ;;
+
+              MOVED_FROM|MOVED_FROM,ISDIR|DELETE|DELETE,ISDIR)
+                  echo $event'-'$file
+                  ;;
+          esac
+      done
