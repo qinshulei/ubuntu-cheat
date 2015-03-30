@@ -1,0 +1,5 @@
+# watch the os verison, Ubuntu 12.04.4 LTS \n \l
+cat /etc/issue
+
+# find the install package by name
+dpkg -l | grep aufs
