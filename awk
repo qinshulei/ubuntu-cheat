@@ -10,3 +10,6 @@ awk '/gold/' 1.txt
 
 # print number of fields
 awk '{print NF}'
+
+# print excel parse txt into markdown link
+awk 'BEGIN { FS = "\t" } ; { print "+ [`",$1,"`](",$2,")" }' ppurl.txt
