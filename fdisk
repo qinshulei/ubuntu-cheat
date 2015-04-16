@@ -1,0 +1,2 @@
+# find disk for mount disk 
+sudo fdisk -l
