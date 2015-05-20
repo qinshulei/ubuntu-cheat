@@ -1,0 +1,2 @@
+# generate name throgh command line
+python -m faker -l 'zh_CN' name
