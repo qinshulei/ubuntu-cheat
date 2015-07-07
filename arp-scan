@@ -1,0 +1,5 @@
+# using Wi-Fi:
+sudo arp-scan -l --interface=wlan0
+
+# using ethernet:
+sudo arp-scan -l --interface=eth0
