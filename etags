@@ -1,0 +1,2 @@
+# use etags to tag symbol
+find . -type f -iname "*.py" | xargs etags -a
