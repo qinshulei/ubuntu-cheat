@@ -1,0 +1,5 @@
+# convert all jpg to png
+mogrify -format png *.jpg
+
+# resize all png
+mogrify -resize 270x480   *.png 

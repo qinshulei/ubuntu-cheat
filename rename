@@ -1,0 +1,2 @@
+# change all file names
+rename s/.jpg/_small.jpg/ *
