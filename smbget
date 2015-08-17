@@ -1,0 +1,2 @@
+# get a file from smb
+smbget -a smb://192.168.65.12/share/Software/vbox-xp-office/xp_with_office.ova -o /tmp/xp_with_office.ova
