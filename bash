@@ -31,11 +31,18 @@ fname(){
     commands
 }
 
-# Turn on debugging:
+# Turn on/off debugging:
 set -x
-
-# Turn off debugging:
 set +x
+
+
+# Turn on/off fail exit:
+set -e
+set +e
+
+# Turn on/off pip fail:
+set -o pipefail
+set +o pipefail
 
 # How all bash scripts should start (sharp-bang)
 #!/bin/bash

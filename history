@@ -1,0 +1,39 @@
+# To see most used top 10 commands:
+history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl | head -n10
+
+#### history command
+!n                              # use history n history command
+!-n                              # use last n history command
+!!                              # use last history command
+!str                                  # use start with str history command
+!?str                              # use contains str history command
+!#                                  # ref current command
+!#:1                                # current command params 1
+
+##### history params
+!$                              # last command's last param
+!^                                # last command's first param
+!*                               # last command's all params
+!!:n                              # last command's n param
+!str:x-y                              # last command's x - y params
+!?str:n*                         # last command's n - end params
+
+##### history path process
+!$:h                              # last param (path) 's dirname (file path)
+!$:t                              # last param (path) 's basename (file name)
+!$:r                              # last param (path) 's filename (remove extension,like xx.zip -> xx)
+!$:e                              # last param (path) 's file extension (remove filename,like xx.zip -> zip)
+
+#### history replace
+^str1^str2^                       # replace last contains str1 command and replace with str2, only replace once
+!n:^str1^str2^                    # replace n history command and replace str1 with str2, only replace once
+!-n:gs/str1/str2                  # replace all str1 with str2 in last n history command
+
+
+
+
+
+
+
+
+
