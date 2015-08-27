@@ -10,3 +10,6 @@ bg
 
 # let bg don't relate to the shell
 disown %1
+
+# run a command in backgroud and don't relate to the shell
+nohup command &
