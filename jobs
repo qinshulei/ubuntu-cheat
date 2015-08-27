@@ -1,0 +1,12 @@
+# list all jobs
+jobs
+
+# run backgroud
+command &
+
+# let a running command in background
+Ctrl+Z
+bg
+
+# let bg don't relate to the shell
+disown %1
