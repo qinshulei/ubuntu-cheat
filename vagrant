@@ -1,0 +1,46 @@
+# https://docs.vagrantup.com
+
+# add a vm
+vagrant box add <name> <url>
+
+# list all
+vagrant box list
+
+# del a vm
+vagrant box remove <name>
+
+# init vagrant vm
+vagrant init [box-name] [box-url]
+
+# run vm
+vagrant up [vm-name] [--[no-]provision] [-h]
+
+# ssh to vm
+vagrant ssh [vm-name] [-c command] [-- extra ssh args]
+
+# shutdown vm
+vagrant halt [vm-name]
+
+# stop running vm, and clean all resource
+vagrant destroy [vm-name]
+
+# suspend the vm ,so you can resume later
+vagrant suspend [vm-name]
+
+# resume suspend vm
+vagrant resume [vm-name]
+
+# halt the vm ,the up vm
+vagrant reload [vm-name]
+
+# show vm status
+vagrant status [vm-name]
+
+# package a vm
+vagrant package [vm-name] [--base name] [--output name.box][--include one,two,three] [--vagrantfile file]
+
+# run provision config like : ansible chef config
+vagrant provision [vm-name]
+
+# show ssh config
+vagrant ssh-config [vm-name] [--host name]
