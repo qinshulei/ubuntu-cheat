@@ -6,6 +6,31 @@
 
 以下为`cheat`的项目地址： [https://github.com/chrisallenlane/cheat](https://github.com/chrisallenlane/cheat)
 
+### 例子
+
+记不起后台运行的命令，通过cheat快速查询命令实例
+
+```
+$  cheat jobs
+# list all jobs
+jobs
+
+# run backgroud
+command &
+
+# let a running command in background
+Ctrl+Z
+bg
+
+# let bg don't relate to the shell
+disown %1
+
+# run a command in backgroud and don't relate to the shell
+nohup command &
+
+```
+
+
 ### `cheat`的安装
 
 ```bash
