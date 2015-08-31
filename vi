@@ -1,2 +1,2 @@
 # save readonly file
-:w sudo tee %
+:w !sudo tee %
