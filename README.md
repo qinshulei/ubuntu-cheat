@@ -46,12 +46,8 @@ sudo apt-get install python-pip
 # First install the required python dependencies with:
 sudo pip install docopt pygments
 
-# Then, clone this repository, cd into it, and run:
-cd ~
-git clone https://github.com/chrisallenlane/cheat.git cheat
-cd cheat
-sudo python setup.py install
-
+# Then install cheat by pip
+sudo pip install cheat
 ```
 
 ## ubuntu-cheat 安装
