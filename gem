@@ -1,0 +1,12 @@
+# install taobao mirror
+gem sources --remove https://rubygems.org/
+gem sources -a https://ruby.taobao.org/
+gem sources -l
+*** CURRENT SOURCES ***
+
+https://ruby.taobao.org
+# 请确保只有 ruby.taobao.org
+
+
+# config bundle mirror
+bundle config mirror.https://rubygems.org https://ruby.taobao.org
