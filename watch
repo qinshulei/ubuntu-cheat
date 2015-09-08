@@ -1,0 +1,10 @@
+# -n set the interval (second), -d highlight diffrence
+
+# watch the network conection changes
+watch -n 1 -d netstat -ant
+
+# watch the file changes
+watch -d 'ls -l|grep filename'
+
+# watch uptime, don't show the time header
+watch -t -d uptime

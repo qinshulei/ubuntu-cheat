@@ -1,0 +1,2 @@
+# find the network route to a host
+traceroute -n  -m 10  www.baidu.com

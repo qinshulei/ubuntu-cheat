@@ -1,0 +1,8 @@
+# show how many forks
+vmstat -f
+
+# show 5s 5times memory status
+vmstat 5 5
+
+# show detail memory info
+vmstat -s

@@ -1,0 +1,8 @@
+# show disk rw status, 2s 3times
+iostat 2 3
+
+# show sda disk rw status
+iostat -d sda
+
+# show disk status with MB
+iostat -m
