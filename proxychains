@@ -1,0 +1,9 @@
+# proxychains conf
+dynamic_chain
+socks5  127.0.0.1  7070
+
+# normal usage
+proxychains git clone https://gerrit.googlesource.com/gerrit/
+
+# if you want to let all command in terminal run through proxy
+proxychains zsh
