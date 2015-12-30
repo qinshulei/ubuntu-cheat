@@ -1,0 +1,14 @@
+# flashap
+alias flashap="
+fastboot flash boot boot.img;
+fastboot flash system system.img;
+fastboot flash persist persist.img;
+fastboot flash userdata userdata.img;
+fastboot reboot"
+
+# flash phone
+lsusb
+fastboot devices
+adb reboot bootloader
+cd image_dir
+flashap
