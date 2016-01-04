@@ -66,3 +66,12 @@ git name-rev 97374dab58cffa8a7d81881377b386dc42c0dcba
 
 # show all refs, gerrit use refs/change/xxx save change
 git show-ref
+
+# delete refs
+git update-ref -d refs/notes/origin/commits
+
+# delete all branch and tag,expect master in remote
+git ls-remote caf | awk '{ print $2 }' | sed '/^HEAD$/d' | sed '/master$/d' | xargs -n 20 git push caf --delete --
+
+# delete all branch tag or other refs, expect master in local
+git show-ref | awk '{ print $2 }' | sed '/^HEAD$/d' | sed '/master$/d' | xargs -n 1 git update-ref -d --
