@@ -12,3 +12,16 @@ fastboot devices
 adb reboot bootloader
 cd image_dir
 flashap
+
+# flash 8909
+fastboot flash aboot emmc_appsboot.mbn
+fastboot erase boot
+fastboot flash userdata userdata.img
+fastboot flash cache cache.img
+fastboot flash recovery recovery.img
+fastboot flash boot boot.img
+fastboot flash system system.img
+fastboot flash persist persist.img
+fastboot reboot
+
+pause

@@ -60,3 +60,9 @@ git archive master | bzip2 >source-tree.tar.bz2
 
 # git ZIP archive:
 git archive --format zip --output /full/path/to/zipfile.zip master 
+
+# find a commit in which branch
+git name-rev 97374dab58cffa8a7d81881377b386dc42c0dcba
+
+# show all refs, gerrit use refs/change/xxx save change
+git show-ref
