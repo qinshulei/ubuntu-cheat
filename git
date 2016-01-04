@@ -75,3 +75,10 @@ git ls-remote caf | awk '{ print $2 }' | sed '/^HEAD$/d' | sed '/master$/d' | xa
 
 # delete all branch tag or other refs, expect master in local
 git show-ref | awk '{ print $2 }' | sed '/^HEAD$/d' | sed '/master$/d' | xargs -n 1 git update-ref -d --
+
+# fetch all gerrit changes in local, so that we can diff easy,and cherry-pick easy
+git ls-remote origin | grep /changes/ | awk '{print $2;}' | while read REF
+do
+	git fetch "${REMOTE}" "${REF}"
+	git branch ${echo "${REF}" | sed 's#refs/changes/../#change/#'} FETCH_HEAD
+done
