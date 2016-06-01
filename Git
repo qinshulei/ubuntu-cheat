@@ -3,7 +3,7 @@ HEAD                                    #pointer to the last commit. cat .git/HE
 index                                   #aka staging area. contains files to be commited, added with git add
 
 COMMANDS
-git --abbrev-commit --pretty=online     #shows short commit numbers; one line per commit
+git log --online     #shows short commit numbers; one line per commit
 git add -u                              #update. ensures that also deleted files will be gone from remote/repo
 git add <file>                          #add untracked to tracked work. tree or add tracked work. tree to index
 git clean [-f, -n] -f                   #delete untracked files. -n shows what will be deleted

@@ -11,3 +11,13 @@ repo manifest -r -o static_manifest.xml
 repo forall -p -c 'echo " REPO_PROJECT:${REPO_PROJECT} \n REPO_PATH:${REPO_PATH} \n REPO_REMOTE:${REPO_REMOTE} \n REPO_LREV:${REPO_LREV} \n REPO_RREV:${REPO_RREV}"'
 
 
+# query all branch by git
+#!/bin/bash
+while read LINE;do
+    REPO_PROJECT=${LINE##* }
+    REPO_PATH=${LINE%% *}
+    cd ${REPO_PATH}.git
+    echo "REPO_PROJECT: ${REPO_PROJECT}"
+    git ls-remote origin | sed '/^.*tags.*/d'
+    cd -
+done < repo_list.txt
