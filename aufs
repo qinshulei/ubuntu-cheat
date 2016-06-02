@@ -1,0 +1,12 @@
+## install aufs
+sudo apt-get update
+sudo apt-get install aufs-tools
+
+## aufs mount
+mount -t aufs -o br=${branch_dir}=rw:${origin_dir}=ro none ${target_dir}
+# origin_dir is the base layer which readonly
+# branch_dir is the middle layer for save changes, which read write
+# target_dir is the result layer
+
+## test file speed
+dd if=/dev/zero of=/tmp/output conv=fdatasync bs=384k count=1k; rm -f /tmp/output
