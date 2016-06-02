@@ -1,0 +1,48 @@
+# run docker container
+docker run -p 8080:8080 -p 50000:50000 \
+       --restart=always \
+       -v ${jenkins_location}/jenkins_home:/var/jenkins_home \
+       jenkins
+
+# Link container
+docker run --name CONTAINER
+docker run -d --link CONTAINER:ALIAS --name LINKED user/wordpress
+docker rm --link
+
+# see image
+docker image
+
+# see running container
+docker ps
+
+# see all container
+docker ps -a
+
+# stop restart start container
+docker start ${container_id}
+docker restart ${container_id}
+docker stop ${container_id}
+
+# rm image
+docker rmi ${image_name}
+
+# rm container
+docker rm ${container_id}
+
+# download image
+docker pull jenkins
+
+# save image
+docker save jenkins > jenkins.tar
+docker save -o fedora-all.tar fedora
+
+# store image
+docker load < jenkins.tar
+docker load --input fedora.tar
+
+# docker cp files
+docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt
+
+# install docker
+curl -fsSL https://get.docker.com/ | sh
