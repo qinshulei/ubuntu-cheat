@@ -46,3 +46,6 @@ docker cp mycontainer:/foo.txt foo.txt
 
 # install docker
 curl -fsSL https://get.docker.com/ | sh
+
+# 4 ways to goto docker container's shell
+sudo docker exec -it 665b4a1e17b6 /bin/bash
