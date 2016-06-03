@@ -49,3 +49,6 @@ curl -fsSL https://get.docker.com/ | sh
 
 # 4 ways to goto docker container's shell
 sudo docker exec -it 665b4a1e17b6 /bin/bash
+
+# docker run command as a user
+docker exec -ti --user www-data e25659a8fdfc ./occ
