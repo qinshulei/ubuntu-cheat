@@ -1,0 +1,24 @@
+# a git config example
+
+[url "ssh://xxxx@192.168.1.1:29418"]
+    pushInsteadOf = http://192.168.2.1:8080
+
+[url "ssh://xxxx@192.168.1.1:29418"]
+    insteadOf = http://192.168.2.1:8080
+
+[user]
+  name = qinshulei
+  email = 527072230@qq.com
+
+[color]
+  ui = auto
+
+[merge]
+  tool = ediff
+  conflictstyle = diff3
+
+[diff]
+  algorithm = histogram
+
+[rerere]
+  enabled = true
