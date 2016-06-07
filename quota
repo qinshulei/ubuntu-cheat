@@ -1,0 +1,8 @@
+# report all quota status
+sudo repquota -as
+
+# see your self quota
+quota -s
+
+# edit quota
+edquota ftpuser
