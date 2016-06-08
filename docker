@@ -52,3 +52,6 @@ sudo docker exec -it 665b4a1e17b6 /bin/bash
 
 # docker run command as a user
 docker exec -ti --user www-data e25659a8fdfc ./occ
+
+# add docker group
+sudo usermod -aG docker qinshulei
