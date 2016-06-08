@@ -18,3 +18,6 @@ sed ':a;N;$!ba;s/\n//g'  file.txt
 
 # To replace newlines with \n in multiple lines
 sed ':a;N;$!ba;s/\n/\\n/g'  file.txt
+
+# replace all file in directory
+find /home/www -type f -print0 | xargs -0 sed -i 's/subdomainA.example.com/subdomainB.example.com/g'

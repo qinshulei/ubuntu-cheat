@@ -3,3 +3,5 @@ ssh -p 29418 username@review.site.com gerrit review --verified +1 --code-review 
 
 # query information from gerrit
 ssh -p 29418 username@review.site.com gerrit query --format=JSON --commit-message gerritid --current-patch-set
+
+ssh -p 29418 username@review.site.com gerrit query gerritid --current-patch-set
