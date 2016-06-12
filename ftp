@@ -1,5 +1,12 @@
+# install lftp command
+sudo apt-get install -y lftp
+
 # use wget to download ftp directory
 wget -r --user="user@login" --password="Pa$$wo|^D" ftp://server.com/
 
 # skip create files.
 wget -r -nH --cut-dirs=5 -nc ftp://user:pass@server//absolute/path/to/directory
+
+wget -m ftp://username:password@www.mydomain.tld/
+
+wget -m ftp://username:password@www.mydomain.tld/htdocs
