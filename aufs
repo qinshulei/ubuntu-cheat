@@ -1,6 +1,6 @@
 ## install aufs
 sudo apt-get update
-sudo apt-get install aufs-tools
+sudo apt-get install -y aufs-tools
 
 ## aufs mount
 mount -t aufs -o br=${branch_dir}=rw:${origin_dir}=ro none ${target_dir}

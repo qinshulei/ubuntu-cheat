@@ -10,3 +10,27 @@ wget -r -nH --cut-dirs=5 -nc ftp://user:pass@server//absolute/path/to/directory
 wget -m ftp://username:password@www.mydomain.tld/
 
 wget -m ftp://username:password@www.mydomain.tld/htdocs
+
+# mount ftp
+sudo apt-get install -y curlftpfs
+curlftpfs -o allow_other,allow_root,user=ftp-user:ftp-pass my-ftp-location.local /mnt/my_ftp/
+
+# or
+Mount ftp with curlftpfs using /etc/fstab
+Since we do not want put any passwords to /etc/fstab file we will first create a /root/.netrc file with a ftp username and password using this format:
+
+machine my-ftp-location.local
+login ftp-user
+password ftp-pass
+Now change permissions of this file to 600:
+
+# chmod 600 /root/.netrc
+Check uid and gid of your non-root user. This user will have a access to ftp mount directory:
+
+$ id
+In the next step add a following line to your /etc/fstab file ( change credentials for your ftp user ):
+
+curlftpfs#my-ftp-location.local /mnt/my_ftp fuse allow_other,uid=1000,gid=1000,umask=0022 0 0
+Now mount ftp with:
+
+mount -a
