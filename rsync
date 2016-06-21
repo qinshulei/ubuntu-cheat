@@ -18,3 +18,9 @@ rsync -av --delete /src/foo/ /dest/foo
 
 # ignore .repo dir
 rsync -av --delete --exclude ".repo" /src/foo/ /dest/foo
+
+# rsync to ftp
+mkdir -p /var/tmp/rsync
+rsync -rav --temp-dir=/var/tmp/rsync /tmp/somedata .
+Explanation:
+The ftp system does not allow creation of temp files. Instead you can direct rsync to create those files locally.
