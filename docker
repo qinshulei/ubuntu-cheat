@@ -55,3 +55,21 @@ docker exec -ti --user www-data e25659a8fdfc ./occ
 
 # add docker group
 sudo usermod -aG docker qinshulei
+
+# install registry
+docker run -d -p 5000:5000 --restart=always --name registry \
+  -v `pwd`/data:/var/lib/registry \
+  registry:2
+
+# Registry Command
+# Get any image from the hub and tag it to point to your registry:
+docker pull ubuntu && docker tag ubuntu localhost:5000/ubuntu
+
+# ... then push it to your registry:
+docker push localhost:5000/ubuntu
+
+# ... then pull it back from your registry:
+docker pull localhost:5000/ubuntu
+
+# To stop your registry, you would:
+docker stop registry && docker rm -v registry
