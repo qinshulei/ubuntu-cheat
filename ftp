@@ -34,3 +34,11 @@ curlftpfs#my-ftp-location.local /mnt/my_ftp fuse allow_other,uid=1000,gid=1000,u
 Now mount ftp with:
 
 mount -a
+
+# mount ftp by fstab
+# Add the curlftpfs mount into fstab to make it mount everytime the system is started (pico /etc/fstab)
+curlftpfs#{username}:{password}@{host} /mnt/ftpbackup fuse rw,allow_other,uid={userid} 0 0
+{username} = FTP username
+{password} = FTP password
+{host} = FTP host/ip
+{userid} = ID of a local user (ex. 1001)
