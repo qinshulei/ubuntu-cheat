@@ -1,0 +1,2 @@
+# generate all files md5sum info
+find ./ -type f -exec md5sum  {} \;
