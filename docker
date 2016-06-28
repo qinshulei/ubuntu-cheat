@@ -1,3 +1,6 @@
+# docker build image
+docker build -t vieux/apache:2.0 .
+
 # run docker container
 docker run -p 8080:8080 -p 50000:50000 \
        --restart=always \
