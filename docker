@@ -2,7 +2,7 @@
 docker build -t vieux/apache:2.0 .
 
 # run docker container
-docker run -p 8080:8080 -p 50000:50000 \
+docker run -d -p 8080:8080 -p 50000:50000 \
        --restart=always \
        -v ${jenkins_location}/jenkins_home:/var/jenkins_home \
        jenkins
