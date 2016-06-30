@@ -80,3 +80,7 @@ docker stop registry && docker rm -v registry
 
 # show docker infomation , for example : root dir, cpu info
 docker	info
+
+# docker query container info
+docker inspect --format '{{.State.Pid}}' CONTAINER_ID
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' CONTAINER_ID
