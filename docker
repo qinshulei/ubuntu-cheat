@@ -84,3 +84,6 @@ docker	info
 # docker query container info
 docker inspect --format '{{.State.Pid}}' CONTAINER_ID
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' CONTAINER_ID
+
+# search image
+docker search jenkins
