@@ -93,3 +93,6 @@ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d -v /data
 
 # look docker file
 docker exec mysql cat /etc/mysql/my.cnf
+
+# run docker-compose app
+docker-compose up -d
