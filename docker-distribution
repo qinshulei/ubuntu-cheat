@@ -1,0 +1,11 @@
+# install jq to process json.
+# distribution api : https://docs.docker.com/registry/spec/api/
+
+# query all images in private docker distribution
+curl -sS http://192.168.65.56:5000/v2/_catalog | jq
+
+# query all jenkins image's tags
+curl -sS http://192.168.65.56:5000/v2/jenkins/tags/list | jq
+
+# query jenkins image's manifest
+curl -sS http://192.168.65.56:5000/v2/jenkins/manifests/latest | jq
