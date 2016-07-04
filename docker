@@ -96,3 +96,6 @@ docker exec mysql cat /etc/mysql/my.cnf
 
 # run docker-compose app
 docker-compose up -d
+
+# run bash
+sudo docker run -a stdin -a stdout -i -t ubuntu /bin/bash
