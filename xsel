@@ -1,0 +1,12 @@
+# install
+sudo apt-get install -y xsel
+
+# copy into primary selection
+some command | xsel
+
+# read primary selection
+xsel
+
+# set the X clipboard
+some command | xsel -b
+xsel -b

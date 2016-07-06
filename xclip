@@ -1,0 +1,16 @@
+# install
+sudo apt-get install -y xclip
+
+# copy into primary selection
+some command | xclip
+
+# read primary selection
+xclip -o
+
+# set the X clipboard
+some command | xclip -selection clipboard
+xclip -selection clipboard -o
+
+# short
+xclip -se c -o
+xclip -sel clip
