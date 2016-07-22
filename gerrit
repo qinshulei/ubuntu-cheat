@@ -5,3 +5,6 @@ ssh -p 29418 username@review.site.com gerrit review --verified +1 --code-review 
 ssh -p 29418 username@review.site.com gerrit query --format=JSON --commit-message gerritid --current-patch-set
 
 ssh -p 29418 username@review.site.com gerrit query gerritid --current-patch-set
+
+# create project
+ssh -p 29418 review.example.com gerrit create-project --parent All-Projects tools/gerrit.git
