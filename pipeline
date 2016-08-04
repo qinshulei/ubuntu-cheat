@@ -1,0 +1,148 @@
+# Pipeline Steps Reference
+The following plugins offer Pipeline-compatible steps. Each plugin link offers more information about the parameters for each step.
+
+## ansible
+ansiblePlaybook: Invoke an ansible playbook
+## artifactory
+artifactoryDownload: Download artifacts
+artifactoryUpload: Upload artifacts
+getArtifactoryServer: Get Artifactory server from Jenkins config
+newArtifactoryServer: Returns new Artifactory server
+newBuildInfo: New buildInfo
+## credentials-binding
+withCredentials: Bind credentials to variables
+## deployment-notification
+awaitDeployment: Awaiting for deployment
+## docker-workflow
+dockerFingerprintFrom: Record trace of a Docker image used in FROM
+dockerFingerprintRun: Record trace of a Docker image run in a container
+withDockerContainer: Run build steps inside a Docker container
+withDockerRegistry: Sets up Docker registry endpoint
+withDockerServer: Sets up Docker server endpoint
+## email-ext
+emailext: Extended Email
+emailextrecipients: Extended Email Recipients
+## figlet-buildstep
+figlet: Figlet
+## gatling
+gatlingArchive: Archive Gatling reports
+## gerrit-trigger
+setGerritReview: Set Gerrit review
+## github-pullrequest
+setGitHubPullRequestStatus: Set GitHub PullRequest Commit Status
+## gitlab-plugin
+gitlabCommitStatus: Update the commit status in GitLab depending on the build status
+## hipchat
+hipchatSend: Send HipChat Message
+## htmlpublisher
+publishHTML: Publish HTML reports
+## http_request
+httpRequest: Perform an HTTP Request and return a response object
+## integrity-plugin
+siaddprojectlabel: Integrity SCM Label
+sicheckpoint: Integrity SCM Checkpoint
+sici: Integrity SCM Checkin
+## jira
+jiraComment: JIRA: Add comment to the issue
+jiraIssueSelector: JIRA: Issue selector
+jiraSearch: JIRA: Search issues
+## lockable-resources
+lock: Lock shared resource
+## nexus-artifact-uploader
+nexusArtifactUploader: Nexus non-maven artifacts uploader
+## openshift-pipeline
+openShiftBuild: Trigger OpenShift Build
+openShiftCreateResource: Create OpenShift Resource(s)
+openShiftDeleteResourceByJsonYaml: Delete OpenShift Resource(s) from JSON/YAML
+openShiftDeleteResourceByKey: Delete OpenShift Resource(s) by Key
+openShiftDeleteResourceByLabels: Delete OpenShift Resource(s) using Labels
+openShiftDeploy: Trigger OpenShift Deployment
+openShiftScale: Scale OpenShift Deployment
+openShiftTag: Tag OpenShift Image
+openShiftVerifyBuild: Verify OpenShift Build
+openShiftVerifyDeployment: Verify OpenShift Deployment
+openShiftVerifyService: Verify OpenShift Service
+## p4
+p4publish: P4 Publish
+p4sync: P4 Sync
+p4tag: P4 Tag
+p4unshelve: P4 Unshelve
+parallel-test-executor
+splitTests: Split Test Runs
+## pipeline-build-step
+build: Build a job
+## pipeline-input-step
+input: Wait for interactive input
+## pipeline-stage-step
+stage: Stage
+## pipeline-utility-steps
+findFiles: Find files in the workspace
+readManifest: Read a Jar Manifest
+readMavenPom: Read a maven project file.
+readProperties: Read properties from files in the workspace or text.
+touch: Create a file (if not already exist) in the workspace, and set the timestamp
+unzip: Extract Zip file
+writeMavenPom: Write a maven project file.
+zip: Create Zip file
+## pragprog
+pragprog: Activate tips from The Pragmatic Programmer
+## sauce-ondemand
+sauce: Sauce
+sauceconnect: Sauce Connect
+## slack
+slackSend: Send Slack Message
+## ssh-agent
+sshagent: SSH Agent
+## teamconcert
+teamconcert: Team Concert
+## timestamper
+timestamps: Timestamps
+## vsphere-cloud
+vSphere: Invoke an vSphere action, exposing the VM IP under some actions
+## workflow-basic-steps
+archive: Archive artifacts
+deleteDir: Recursively delete the current directory from the workspace
+dir: Change current directory
+echo: Print Message
+error: Error signal
+fileExists: Verify if file exists in workspace
+isUnix: Checks if running on a Unix-like node
+mail: Mail
+pwd: Determine current directory
+readFile: Read file from workspace
+retry: Retry the body up to N times
+sleep: Sleep
+stash: Stash some files to be used later in the build
+step: General Build Step
+timeout: Enforce time limit
+tool: Use a tool from a predefined Tool Installation
+unstash: Restore files previously stashed
+waitUntil: Wait for condition
+withEnv: Set environment variables
+wrap: General Build Wrapper
+writeFile: Write file to workspace
+catchError: Catch error and set build result
+unarchive: Copy archived artifacts into the workspace
+## workflow-cps
+load: Evaluate a Groovy source file into the Pipeline script
+parallel: Execute in parallel
+workflow-durable-task-step
+bat: Windows Batch Script
+node: Allocate node
+sh: Shell Script
+ws: Allocate workspace
+workflow-multibranch
+properties: Set job properties
+readTrusted: Read trusted file from SCM
+## workflow-scm-step
+checkout: General SCM
+git: Git
+svn: Subversion
+## workflow-support
+build: Build a job
+input: Wait for interactive input
+node: Allocate node
+stage: Stage
+stash: Stash some files to be used later in the build
+unstash: Restore files previously stashed
+ws: Allocate workspace
