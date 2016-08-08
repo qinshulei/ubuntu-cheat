@@ -1,0 +1,16 @@
+# remake is a command support profile make.
+# https://github.com/rocky/remake
+
+# make with profile
+remake --profile # target...
+## it will create file like callgrind.out.23687
+
+# use valgrind to generate graphic http://valgrind.org/docs/manual/cl-format.html
+# use gprof2dot to generate graphic
+sudo apt-get install python graphviz
+sudo pip install gprof2dot
+
+gprof2dot -f callgrind  callgrind.out.23687 > android_make.dot
+
+# use graphviz to convert to png. http://www.graphviz.org/
+dot -Tpng android_make.dot > output.png

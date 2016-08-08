@@ -6,3 +6,6 @@ date -R
 sudo tzselect
 sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
 sudo ntpdate time.windows.com
+
+# show date in microsecond
+date +%s.%N
