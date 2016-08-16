@@ -27,3 +27,13 @@ make Launcher2 snod
 make -j4 showcommands
 
 time make clean-libcamera_client clean-screenrecord clean-libserviceutility droid -j24
+
+# make2graph
+# https://github.com/lindenb/makefile2graph
+make -Bnd 2>&1 > make_Bnd.txt
+make -Bnd | make2graph > output.dot
+make -Bnd | make2graph | dot -Tpng -o out.png
+make -Bnd | make2graph --format x > output.xml
+ln -s ~/qsl/lab/makefile2graph/make2graph make2graph
+cat make_Bnd.txt|  make2graph --format x > make-targets.xml
+cat make_Bnd.txt | make2graph > make-targets.dot
