@@ -1,0 +1,10 @@
+# build with command line
+JENKINS_URL=
+JOB_NAME=
+TOKEN=
+JOB_PARAMETER='{"name":"FORCE_BUILD", "value":"flase"}'
+USER=
+curl -X POST ${JENKINS_URL}/job/${JOB_NAME}/build \
+     --user ${USER}:${TOKEN} \
+     --data token=${TOKEN} \
+     --data-urlencode json='{"parameter": ['"${JOB_PARAMETER}"']}'
