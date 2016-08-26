@@ -1,0 +1,20 @@
+## skype.desktop
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+X-Created-By=cxoffice-0a9dec8d-ee79-442f-9279-7ca8811c1420
+Icon=cxmenu-cxoffice-0a9dec8d-ee79-442f-9279-7ca8811c1420-794E_SkypeIcon.0
+Exec="/home/qinshulei/.cxoffice/Skype_4.2/desktopdata/cxmenu/Desktop.C^5E3A_users_crossover_Desktop/Skype.lnk" %u
+Name=Skype
+Comment=Launch Skype
+
+## trigger jenkins job, purple.desktop
+[Desktop Entry]
+Name=Purple Build
+Comment=start purple build quickly
+Exec=/home/qinshulei/purple/build_purple.bash
+Icon=/home/qinshulei/purple/clock.png
+Terminal=true
+Type=Application
