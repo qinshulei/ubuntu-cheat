@@ -15,4 +15,4 @@ alias cnpm="npm --registry=http://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 # npm install from gitlab
-npm install --save 'git+ssh://git@192.168.67.56:qinsl0106/socialcalc#master'
+npm install --save 'git+ssh://git@192.168.67.56:/qinsl0106/socialcalc#master'
