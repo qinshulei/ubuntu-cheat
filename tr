@@ -1,0 +1,28 @@
+# upcase string
+echo "abc" | tr a-z A-Z
+
+# translate all num to x
+echo "password : 123456789" | tr '[:digit:]' '[x*]'
+
+# remove all \n
+ls -rt | tail -1 | tr -d '\n' | xsel -b
+
+# format space
+echo "abc  def    hij" | tr -s " "
+
+# only keep a-z,A-Z
+echo "abc01  def02    hij03" | tr -cd a-z,A-Z
+
+# collection
+[:alnum:] ：所有字母字符与数字
+[:alpha:] ：所有字母字符
+[:blank:] ：所有水平空格
+[:cntrl:] ：所有控制字符
+[:digit:] ：所有数字
+[:graph:] ：所有可打印的字符(不包含空格符)
+[:lower:] ：所有小写字母
+[:print:] ：所有可打印的字符(包含空格符)
+[:punct:] ：所有标点字符
+[:space:] ：所有水平与垂直空格符
+[:upper:] ：所有大写字母
+[:xdigit:] ：所有 16 进位制的数字
