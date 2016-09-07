@@ -36,3 +36,11 @@ curl --limit-rate 1000B -O http://path.to.the/file
 
 # query gerrit rest api
 curl -X GET --digest --user username:http-password 'http://192.168.65.19:8080/a/changes/?q=status:open'
+
+# alertover
+curl -s \
+    --form-string "source=s-138cdc2f-8624-461c-8cdf-3ebf5931" \
+    --form-string "receiver=g-364ec0e4-5c27-4fbb-a899-040eea16" \
+    --form-string "content=hello world" \
+    --form-string "title=hello" \
+    https://api.alertover.com/v1/alert
