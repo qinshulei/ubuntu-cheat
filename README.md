@@ -34,12 +34,8 @@ nohup command &
 ### `cheat`的安装
 
 ```bash
-# install python and pip
+# install pip
 
-# 安装 Python 发布版本，dev包必须安装，很多用pip安装包都需要编译
-sudo apt-get install python2.7 python2.7-dev python3.2 python3.2-dev
-# 很多pip安装的包都需要libssl和libevent编译环境
-sudo apt-get install build-essential libssl-dev libevent-dev libjpeg-dev libxml2-dev libxslt-dev
 # 安装 pip
 sudo apt-get install python-pip
 
