@@ -103,3 +103,6 @@ sudo docker run -a stdin -a stdout -i -t ubuntu /bin/bash
 # for our docker registry, error like : docker tls: oversized record received with length
 vi /etc/default/docker
 DOCKER_OPTS="--insecure-registry 192.168.65.56:5000 "
+
+# docker update opengrok
+docker exec nostalgic_dubinsky /opengrok-0.12.1.5/bin/OpenGrok index /src
