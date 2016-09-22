@@ -106,3 +106,6 @@ DOCKER_OPTS="--insecure-registry 192.168.65.56:5000 "
 
 # docker update opengrok
 docker exec nostalgic_dubinsky /opengrok-0.12.1.5/bin/OpenGrok index /src
+
+# install git for runing container
+docker exec nostalgic_dubinsky sh -c "apt-get update -y && apt-get install --no-install-recommends -y -q git"
