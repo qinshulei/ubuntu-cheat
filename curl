@@ -44,3 +44,12 @@ curl -s \
     --form-string "content=hello world" \
     --form-string "title=hello" \
     https://api.alertover.com/v1/alert
+
+# query file size
+$ curl -sI  https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar | grep Content-Length | awk '{print $2}'
+21279242240
+
+# download by split it into 3 part
+$ curl --range 0-9999999999 aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
+$ curl --range 10000000000-19999999999 aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
+$ curl --range 20000000000- aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
