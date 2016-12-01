@@ -39,3 +39,6 @@ wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip
 
 # download ftp files
 wget -nH -m --ftp-user=ftpuser --ftp-password=dev123 ftp://192.168.64.146/ReadOnly/release/daily/GG01_master-2016-08-11-W32-4-1/Image
+
+# download http server files
+wget -r -np -nH --cut-dirs=3 -R index.html http://hostname/aaa/bbb/ccc/ddd/

@@ -1,0 +1,11 @@
+# 回到正常角度
+xrandr -o normal
+
+# 向右旋转90度
+xrandr -o right
+
+# 向左旋转90度
+xrandr -o left
+
+#  上下翻转
+xrandr -o inverted
