@@ -2,7 +2,7 @@
 repo forall -c 'pwd;git checkout -f remotes/origin/20150703 -b master;git push -f origin master:refs/heads/master' 2>&1 | tee push.log
 
 # repo init
-repo init -u ssh://qinsl0106@192.168.64.51:29418/manifest -b master -m manifest-full.xml --repo-url=ssh://qinsl0106@192.168.64.51:29418/repo
+repo init -u ssh://username@192.168.1.1:29418/manifest -b master -m manifest-full.xml --repo-url=ssh://username@192.168.1.1:29418/repo
 
 # repo output static manifest.
 repo manifest -r -o static_manifest.xml

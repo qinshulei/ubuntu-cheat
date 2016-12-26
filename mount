@@ -10,7 +10,7 @@ mount -o uid=username,gid=usergroup /dev/sdx /mnt/xxx
 # To mount a remote NFS directory
 mount -t nfs example.com:/remote/example/dir /local/example/dir
 
-mount -t cifs //192.168.65.12/share/software /media/remotedisk -o username=qinsl0106,uid=1000,gid=1000,rw
+mount -t cifs //192.168.65.12/share/software /media/remotedisk -o username=username,uid=1000,gid=1000,rw
 
 # mount aufs
 mount -t aufs -o br=${branch_dir}=rw:${origin_dir}=ro none ${target_dir}
