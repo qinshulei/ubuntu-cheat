@@ -1,0 +1,18 @@
+# record a new patch
+quilt new 001-new-code.patch
+
+# edit file and save in patch
+quilt edit hello.txt
+quilt edit world.txt
+
+# show current diff
+quilt diff
+
+# save the diff in patches
+quilt refresh
+
+# show current patches.
+quilt series
+
+# apply all the patches.
+quilt push -a
