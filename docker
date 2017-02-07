@@ -109,3 +109,12 @@ docker exec nostalgic_dubinsky /opengrok-0.12.1.5/bin/OpenGrok index /src
 
 # install git for runing container
 docker exec nostalgic_dubinsky sh -c "apt-get update -y && apt-get install --no-install-recommends -y -q git"
+
+# install docker by daocloud
+curl -sSL https://get.daocloud.io/docker | sh
+
+# use daocloud mirror
+curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f7e4ccc5.m.daocloud.io
+
+# restart docker
+sudo systemctl restart docker.service
