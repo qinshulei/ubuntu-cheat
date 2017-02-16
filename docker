@@ -118,3 +118,13 @@ curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f7e4ccc5
 
 # restart docker
 sudo systemctl restart docker.service
+
+# use daemon.json
+root@ubuntu:/etc/docker# cat daemon.json 
+{
+ "registry-mirrors": ["http://f7e4ccc5.m.daocloud.io"],
+ "insecure-registries":["192.168.67.56:5000"],
+ "graph": "/home/docker"
+}
+
+# the graph change the docker storage.
