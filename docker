@@ -128,3 +128,6 @@ root@ubuntu:/etc/docker# cat daemon.json
 }
 
 # the graph change the docker storage.
+
+# Set storage driver options per container
+$ docker run -it --storage-opt size=120G fedora /bin/bash
