@@ -1,0 +1,5 @@
+# form head
+patch -p0 xxx.patch
+
+# ignore head
+patch -p1 xxxx.patch

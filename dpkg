@@ -1,0 +1,8 @@
+# grep docker install app name
+dpkg -l | grep docker
+
+# show install app file
+dpkg -L
+
+# show install app info
+dpkg -s
