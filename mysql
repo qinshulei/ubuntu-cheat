@@ -12,3 +12,9 @@ CREATE DATABASE owa CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 # To add a user and give rights on the given database
 GRANT ALL PRIVILEGES ON database.* TO 'user'@'localhost'IDENTIFIED BY 'password' WITH GRANT OPTION;
+
+# show user
+select user,host from mysql.user;
+
+# show permission
+show grants for 'root'@'%';
