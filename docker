@@ -131,3 +131,6 @@ root@ubuntu:/etc/docker# cat daemon.json
 
 # Set storage driver options per container
 $ docker run -it --storage-opt size=120G fedora /bin/bash
+
+# as a root run bash
+docker exec --user root -it 1fc2127b04cd /bin/bash
