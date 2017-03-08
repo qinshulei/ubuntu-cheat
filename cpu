@@ -8,3 +8,11 @@ cpulimit -l 50 PROCESS
 cgcreate -g cpu:/cpulimited
 cgset -r cpu.shares=512 cpulimited
 cgexec -g cpu:cpulimited PROCESS
+
+# taskset , retrieve or set a process's CPU affinity
+$ taskset -p 30217
+pid 30217's current affinity mask: f
+
+$ taskset -cp 0,4 9030
+
+$ taskset 0x1 vlc
