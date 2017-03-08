@@ -1,0 +1,10 @@
+# nice : nice is a great tool for 'one off' tweaks to a system.
+nice PROCESS
+
+# cpulimit :  is useful when you need to run a CPU intensive job and having free CPU time is essential for the responsiveness of a system.
+cpulimit -l 50 PROCESS
+
+# cgroups : are the Swiss army knife of process limiting and offer the greatest flexibility.
+cgcreate -g cpu:/cpulimited
+cgset -r cpu.shares=512 cpulimited
+cgexec -g cpu:cpulimited PROCESS
