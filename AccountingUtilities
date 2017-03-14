@@ -1,0 +1,20 @@
+# sudo apt-get install acct
+
+# ac: print statistics about connect time
+# accton: turns accounting on or off
+# lastcomm: list last commands executed
+# sa: print accounting statistics
+# dump-acct: print accounting file in human-readable form
+
+
+# script : script is a command that make a typescript that printed in the terminal. It is useful for everyone who need a hardcopy record of the session that happened in the terminal. This record can be saved and printed out later.
+
+
+# show usage in user with percent
+sa -c -m
+
+# show person login time
+ac -p -d
+
+# last login information
+last
