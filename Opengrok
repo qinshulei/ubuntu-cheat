@@ -68,3 +68,6 @@ OPENGROK_PROGRESS=true OPENGROK_GENERATE_HISTORY=off OPENGROK_VERBOSE=true OPENG
 
 #
 # Print usage to stderr and exit.
+
+
+opengrok 的命令行，根本上是执行 java -jar opengrok.jar xxx. 这一命令， 其中要指定很多参数， 因此由 opengrok 这个shell脚本来辅助设置参数。 实际上 opengrok 的脚本，并不能设置所有的参数。 尤其是默认开启了scm支持， 也就是支持 history 非常耗时。因此我们需要修改 opengrok 脚本，已适合我们的部署方式，比如默认禁用历史，开启详细日志，开启进度显示。java使用 8g 的存储. 这样最终， opengrok update在十份代码以上也能即时的索引完。
