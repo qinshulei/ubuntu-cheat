@@ -1,0 +1,70 @@
+# notice : opengrok 命令默认是会使用 -H 选项开启历史的。 只能通过修改 opengrok 命令的脚本来关闭这个选项。
+# opengrok 建议自己在 opengrok 脚本的基础上修改， 比如双代码，双data. 通过 move 的方式切换。
+# 默认开启 日志和进度
+
+OPENGROK_PROGRESS=true OPENGROK_GENERATE_HISTORY=off OPENGROK_VERBOSE=true OPENGROK_FLUSH_RAM_BUFFER_SIZE="-m 256" nice /home/opengrok/bin/OpenGrok update 2>&1 >> $OPENGROK_LOG
+
+#!/bin/sh
+#
+# OpenGrok Wrapper (initial setup and cron job updating)
+#
+# Supported Operating Systems:
+# - Solaris 10 (SunOS 5.10)
+# - Solaris 11 (SunOS 5.11)
+# - Debian (Linux)
+#
+# Supported Deployment Engines:
+# - Tomcat 6
+# - Tomcat 5.5
+# - Glassfish
+#
+# Supported Environment Variables:
+# - OPENGROK_NON_INTERACTIVE Suppress Progress and Warnings Messages (*)
+# - OPENGROK_STANDARD_ENV Run Time Shell Environment (Shell Script)
+# - OPENGROK_CONFIGURATION User Configuration (Shell Script)
+#
+# Supported Environment Variables for configuring the default setup:
+# - OPENGROK_DISTRIBUTION_BASE Base Directory of the OpenGrok Distribution
+# - OPENGROK_INSTANCE_BASE Base Directory of the OpenGrok User Data Area
+# - EXUBERANT_CTAGS Full Path to Exuberant CTags
+# - JAVA_HOME Full Path to Java Installation Root
+# - JAVA Full Path to java binary
+# - JAVA_OPTS Java options
+# - OPENGROK_APP_SERVER Application Server ("Tomcat" or "Glassfish")
+# - OPENGROK_WAR_TARGET_TOMCAT Tomcat Specific WAR Target Directory
+# - OPENGROK_WAR_TARGET_GLASSFISH Glassfish Specific WAR Target Directory
+# - OPENGROK_WAR_TARGET Fallback WAR Target Directory
+# - OPENGROK_TOMCAT_BASE Base Directory for Tomcat (contains webapps)
+# - OPENGROK_GLASSFISH_BASE Base Directory for Glassfish
+# (contains domains)
+# - OPENGROK_GLASSFISH_DOMAIN Preferred Glassfish Domain Name
+# - OPENGROK_VERBOSE Enable Verbose Mode in opengrok.jar (*)
+# - OPENGROK_PROGRESS Shows progress in %(percentage) of working
+# through project, it's good to have Verbose
+# Mode enabled too, cost of this is one more
+# traversal of the project before indexing it(*)
+# - OPENGROK_REMOTE_REPOS Disable History Cache for (remote)
+# Repositories (*)
+# - OPENGROK_SCAN_REPOS Disable Scan for repositories (*)
+# - OPENGROK_SCAN_DEPTH how deep should scanning for repos go
+# (by default 3 directories from SRC_ROOT)
+# - OPENGROK_WEBAPP_CFGADDR Web app address to send configuration to
+# (use "none" to avoid sending it to web app)
+# - OPENGROK_WPREFIX Disable wildcard prefix search query
+# support (*)
+# - OPENGROK_DERBY if set, then indexer tries to use derby as
+# historycache (see derby command of this
+# script)
+# - READ_XML_CONFIGURATION file with read only configuration
+# - temporary workaround for bug # 327
+#
+# Notes:
+# (*) Any Non-Empty String will enable these options
+#
+
+#
+# Copyright (c) 2008, 2012, Oracle and/or its affiliates. All rights reserved.
+#
+
+#
+# Print usage to stderr and exit.

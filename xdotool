@@ -1,5 +1,18 @@
 while true; do date +"%Y%m%d_%H%M%S";xdotool getmouselocation; sleep 0.5; clear; done
 
+# select window
+xdotool selectwindow
+
+# set the size
+xdotool windowsize 90177621 1024 768
+
+# search chrome
+xdotool search unstable
+
+# active chrome
+xdotool windowactivate 90177621
+
+
 Available commands:
   getactivewindow
   getwindowfocus
