@@ -9,3 +9,6 @@ sudo ntpdate time.windows.com
 
 # show date in microsecond
 date +%s.%N
+
+# make a dir with current date
+mkdir $(date +"%Y%m%d")
