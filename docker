@@ -134,3 +134,10 @@ $ docker run -it --storage-opt size=120G fedora /bin/bash
 
 # as a root run bash
 docker exec --user root -it 1fc2127b04cd /bin/bash
+
+# check docker status
+$ docker inspect -f {{.State.Running}} helpdesk-NJ
+true
+
+$ docker inspect -f {{.State.Running}} practical_stonebraker
+false
