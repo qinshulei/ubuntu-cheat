@@ -53,3 +53,13 @@ $ curl -sI  https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar | 
 $ curl --range 0-9999999999 aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
 $ curl --range 10000000000-19999999999 aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
 $ curl --range 20000000000- aosp-latest.tar.part1 https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar
+
+# owncloud upload and download
+## create folder
+curl -u user:pass -X MKCOL "http://example.org/owncloud/remote.php/webdav/$(date '+%d-%b-%Y')"
+## upload
+curl -u 'user':'password' -T target_file "http://192.168.67.50/remote.php/webdav/public/""target_file"
+## move file
+curl -u user:pass -X MOVE --header 'Destination: http://example.org/owncloud/remote.php/webdav/target.jpg' http://example.org/owncloud/remote.php/webdav/source.jpg
+## webdav get file
+curl --digest --user username:password  https://store-12345.mybigcommerce.com/dav/exports/products-2012-10-05.csv --output products-2012-10-05.csv
