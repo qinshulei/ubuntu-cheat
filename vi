@@ -1,2 +1,5 @@
 # save readonly file
 :w !sudo tee %
+
+# replace string
+:%s/red/blue/g
