@@ -82,3 +82,28 @@ do
 	git fetch "${REMOTE}" "${REF}"
 	git branch ${echo "${REF}" | sed 's#refs/changes/../#change/#'} FETCH_HEAD
 done
+
+## how to find a file's sha1
+git rev-parse HEAD:filename
+
+## how to show a file's content by file sha1
+git cat-file -p sha1
+
+## show file tree
+git cat-file -p HEAD^{tree}
+
+## git hash file
+$ echo 'test content' | git hash-object -w --stdin
+d670460b4b4aece5915caf5c68d12f560a9fe3e4
+
+# ls-remote
+“Pull Request Refs” which we use to look at the raw references on the server.
+
+# ls-files
+“Manual File Re-merging”, “Rerere” and “The Index” to take a more raw look at what your staging area looks like.
+
+# rev-parse
+“Branch References” to take just about any string and turn it into an object SHA-1.
+
+# write git script
+. "$(git --exec-path)/git-sh-setup"
