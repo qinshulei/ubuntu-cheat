@@ -5,3 +5,6 @@ ss -lpn | grep ",1234,"
 netstat -anp
 
 # list port used by which program
+sudo ss -lptn 'sport = :80'
+sudo netstat -nlp | grep :80
+sudo lsof -n -i :80 | grep LISTEN
