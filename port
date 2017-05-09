@@ -1,0 +1,7 @@
+# list port use
+ss -lpn | grep ",1234,"
+
+# list port use
+netstat -anp
+
+# list port used by which program
