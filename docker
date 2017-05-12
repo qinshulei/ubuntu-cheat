@@ -144,3 +144,6 @@ false
 
 # run one time test on ubuntu
 $ sudo docker run --rm -a stdin -a stdout -i -t njdocker1.nj.thundersoft.com/public/ubuntu:14.04ts /bin/bash
+
+# for entrypoint
+docker run -a stdin -a stdout -it --entrypoint=/bin/bash vmware/harbor-db-migrator

@@ -6,3 +6,6 @@ dpkg -L
 
 # show install app info
 dpkg -s
+
+# remove package
+sudo dpkg -r package_name
