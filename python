@@ -20,6 +20,8 @@ sudo apt-get install ipython
 ipython test.py --pdb
 
 # python debug
+sudo apt-get install python-ipdb
+sudo apt-get install python-pudb
 ## command line
 import ipdb;ipdb.set_trace()
 ## have gui
