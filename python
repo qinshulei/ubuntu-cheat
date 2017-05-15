@@ -14,3 +14,10 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 
 # Pretty print a json
 python -mjson.tool
+
+
+# python debug
+## command line
+import ipdb;ipdb.set_trace()
+## have gui
+import pudb;pudb.set_trace
