@@ -2,3 +2,14 @@
 wget http://images.validation.linaro.org/kvm/standard/large-stable-6.img.gz
 gunzip < large-stable-6.img.gz > large-stable-6.img
 qemu-system-x86_64 -m 1024 -enable-kvm -nographic -drive format=raw,file=./large-stable-6.img
+
+## show qemu image info
+root@ci-lava:/nfs# qemu-img info large-stable-6.img
+image: large-stable-6.img
+file format: raw
+virtual size: 2.8G (3000000000 bytes)
+disk size: 2.8G
+
+
+## create qemu image
+qemu-img create -f raw /mnt/personal-data/SPool1/SVol1.img 10G
