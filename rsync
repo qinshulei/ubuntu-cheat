@@ -24,3 +24,6 @@ mkdir -p /var/tmp/rsync
 rsync -rav --temp-dir=/var/tmp/rsync --no-owner --no-group /tmp/somedata .
 Explanation:
 The ftp system does not allow creation of temp files. Instead you can direct rsync to create those files locally.
+
+# rsync with diffrent port
+rsync -avz -e "ssh -p $portNumber" user@remoteip:/path/to/files/ /local/path/
