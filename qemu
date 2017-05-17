@@ -1,0 +1,4 @@
+### try run the kvm
+wget http://images.validation.linaro.org/kvm/standard/large-stable-6.img.gz
+gunzip < large-stable-6.img.gz > large-stable-6.img
+qemu-system-x86_64 -m 1024 -enable-kvm -nographic -drive format=raw,file=./large-stable-6.img
