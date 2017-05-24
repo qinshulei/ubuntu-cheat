@@ -13,3 +13,6 @@ awk '{print NF}'
 
 # print excel parse txt into markdown link
 awk 'BEGIN { FS = "\t" } ; { print "+ [`",$1,"`](",$2,")" }' ppurl.txt
+
+# find line repeat >3
+awk '{c[$0]++} END {for (i in c) {if (c[i] > 3) {print i}}}' <file-name>

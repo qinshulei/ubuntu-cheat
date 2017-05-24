@@ -147,3 +147,7 @@ $ sudo docker run --rm -a stdin -a stdout -i -t njdocker1.nj.thundersoft.com/pub
 
 # for entrypoint
 docker run -a stdin -a stdout -it --entrypoint=/bin/bash vmware/harbor-db-migrator
+
+## docker remove useless storage
+$ docker system df #will show used space, similar to the unix tool df
+$ docker system prune # will remove all unused data.
