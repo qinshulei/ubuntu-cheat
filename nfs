@@ -1,0 +1,11 @@
+# nfs cheat sheet
+
+# show all nfs exports
+$ showmount -e b26826a1a810
+Export list for b26826a1a810:
+/var/lib/lava/dispatcher/tmp *
+/exports                     *
+
+
+# remote show
+rpcinfo 192.168.65.49
