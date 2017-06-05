@@ -1,0 +1,5 @@
+# install
+sudo apt-get install graphviz
+
+# parse dot
+dot test.dot -Tpng -o test.png
