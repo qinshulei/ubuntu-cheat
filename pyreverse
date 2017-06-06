@@ -1,0 +1,18 @@
+Pyreverse : UML Diagrams for Python
+
+Pyreverse analyses Python code and extracts UML class diagrams and package depenndencies. Since september 2008 it has been integrated with Pylint
+
+# generate python uml
+pyreverse -o png -p lavaDispatcher .
+
+$ pyreverse -o png -p Pyreverse pylint/pyreverse/
+[...]
+creating diagram packages_Pyreverse.png
+creating diagram classes_Pyreverse.png
+
+# General Vue on a Module
+pyreverse -ASmy -k -o png pyreverse/main.py -p Main
+
+
+# Detailed Vue on a Module
+pyreverse -c PyreverseCommand -a1 -s1 -f ALL -o png  pyreverse/main.py
