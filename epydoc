@@ -1,0 +1,7 @@
+# it have great class diagram.
+
+# install
+sudo apt-get install python-epydoc
+
+# init doc
+epydoc --html -o ../../epydoc-lava-dispatcher .
