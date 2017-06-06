@@ -5,6 +5,8 @@ Pyreverse analyses Python code and extracts UML class diagrams and package depen
 # generate python uml
 pyreverse -o png -p lavaDispatcher .
 
+pyreverse -p lavaDispatcher .
+
 $ pyreverse -o png -p Pyreverse pylint/pyreverse/
 [...]
 creating diagram packages_Pyreverse.png
