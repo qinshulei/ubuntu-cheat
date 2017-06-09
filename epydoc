@@ -5,3 +5,4 @@ sudo apt-get install python-epydoc
 
 # init doc
 epydoc --html -o ../../epydoc-lava-dispatcher .
+epydoc --html -o ../../epydoc-lava-dispatcher --graph all .

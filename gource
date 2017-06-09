@@ -1,0 +1,5 @@
+# install gource
+# follow this guid http://gource.io/
+
+# display the code change graph video
+gource --seconds-per-day 4 --start-date "2015-01-02 00:00:00 +01"
