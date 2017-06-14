@@ -1,0 +1,10 @@
+# show file create time. how to find a file's create time
+stat websvn.war
+  File: ‘websvn.war’
+  Size: 31259005  	Blocks: 61056      IO Block: 4096   regular file
+Device: 803h/2051d	Inode: 20350079    Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/qinshulei)   Gid: ( 1000/qinshulei)
+Access: 2016-04-22 17:21:41.420575305 +0800
+Modify: 2015-06-03 18:01:28.058490502 +0800
+Change: 2015-06-03 18:01:28.058490502 +0800
+ Birth: -
