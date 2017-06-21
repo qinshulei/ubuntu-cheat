@@ -1,3 +1,6 @@
+# show kernel version
+uname -r
+
 # update system
 do-release-upgrade
 
