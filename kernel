@@ -1,0 +1,13 @@
+# update system
+do-release-upgrade
+
+# find kernel modules failed log.
+journalctl | grep modules
+
+systemctl status systemd-modules-load.service
+
+# fix error
+sudo apt-get update
+dpkg --configure -a
+sudo apt full-upgrade -f
+sudo apt -f install
