@@ -1,6 +1,10 @@
 # sysdig - the definitive system and process troubleshooting tool
 # https://github.com/draios/sysdig/wiki/Sysdig-Examples
 # https://github.com/draios/sysdig/wiki/Sysdig-Quick-Reference-Guide#basic-command-list
+# https://www.digitalocean.com/community/tutorials/how-to-monitor-your-ubuntu-16-04-system-with-sysdig
+
+# available filters
+sysdig -l
 
 # list chisel name
 sysdig -cl
