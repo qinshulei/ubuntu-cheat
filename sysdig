@@ -1,2 +1,20 @@
 # sysdig - the definitive system and process troubleshooting tool
-csysdig
+
+# gui like htop
+sudo csysdig
+
+
+# dumps datas
+sudo sysdig -s 4096 -z -w ~/sysdig/$(hostname).scap.gz
+
+# look at the top processes by network I/O
+sudo sysdig -r qinshulei-NJ-FA-PC0062.scap.gz -c topprocs_net
+
+# look at the top connection
+sudo sysdig -r qinshulei-NJ-FA-PC0062.scap.gz -c topconns
+
+# spy user command
+sudo sysdig -r qinshulei-NJ-FA-PC0062.scap.gz -c spy_users
+
+# cat log file
+sysdig -r trace.scap.gz -A -c echo_fds fd.filename=.sloboz.pdf
