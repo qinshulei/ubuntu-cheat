@@ -45,8 +45,20 @@ sysdig proc.name=cat and evt.type=open
 # Print the name of the files opened by cat
 ./sysdig -p"%evt.arg.name" proc.name=cat and evt.type=open
 
+# list the field
+sysdig -l
+
 # List the available chisels
 ./sysdig -cl
 
 # Run the spy_ip chisel for the 192.168.1.157 IP address:
 sysdig –c spy_ip 192.168.1.157
+
+# dig the container network datas
+sysdig -s 4096 -z -w scap.gz -pc "(fd.type=ipv4 or fd.type=ipv6) and evt.is_io=true"
+
+# customize the print.
+sysdig -p"user:%user.name dir:%evt.arg.path" evt.type=chdir
+
+# spy users commandline
+sysdig -pc -c spy_users
