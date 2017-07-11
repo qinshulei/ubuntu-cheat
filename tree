@@ -1,2 +1,5 @@
 # show directory with tree
 tree -L 2 | less -MN
+
+# show file disk usage
+tree --du -sh
