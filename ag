@@ -1,2 +1,6 @@
 # how to install
 apt-get install silversearcher-ag
+
+# search
+ag "search"
+ag -F "search"
