@@ -1,3 +1,6 @@
+# git http proxy
+git config --global http.proxy http://xxx:xxx@192.168.1.1:3128
+
 # To set your identify:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
