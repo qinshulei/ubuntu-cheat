@@ -10,6 +10,10 @@ repo manifest -r -o static_manifest.xml
 # repo for all in line
 repo forall -p -c 'echo " REPO_PROJECT:${REPO_PROJECT} \n REPO_PATH:${REPO_PATH} \n REPO_REMOTE:${REPO_REMOTE} \n REPO_LREV:${REPO_LREV} \n REPO_RREV:${REPO_RREV}"'
 
+# push by file
+repo forall -c 'git remote add upstream file:///review_site/git/parent/$REPO_PROJECT.git'
+repo forall -c 'git push upstream --all' 2>&1 | tee push.log
+
 
 # query all branch by git
 #!/bin/bash
