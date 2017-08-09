@@ -110,3 +110,10 @@ d670460b4b4aece5915caf5c68d12f560a9fe3e4
 
 # write git script
 . "$(git --exec-path)/git-sh-setup"
+
+
+# list worktree
+git worktree list
+
+# add worktree
+git worktree add yourpath your-branch
