@@ -17,3 +17,6 @@ ${SSH_GERRIT_COMMAND} review  --verified +1  --code-review +2 --submit ${change}
 
 # http
 curl --digest  -k -u 'username':'gerrit http password' 'https://gerrit.url/a/changes/?q=15&o=CURRENT_REVISION'
+
+# flush cache
+ssh -p 29418 review.example.com gerrit flush-caches --all
