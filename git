@@ -117,3 +117,6 @@ git worktree list
 
 # add worktree
 git worktree add yourpath your-branch
+
+# skip https check
+git config --global http.sslVerify false
