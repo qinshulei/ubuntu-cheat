@@ -64,3 +64,21 @@ while read LINE
 do
         echo $LINE
 done < /etc/passwd
+
+
+# read list form file
+children_projects=( $(<  project-name.txt) )
+
+# read list form command
+children_projects=( $(repo list -n) )
+
+# declare array.
+declare -A animals
+animals=( ["moo"]="cow" ["woof"]="dog")
+declare -A animals=( ["moo"]="cow" ["woof"]="dog")
+echo "${animals[moo]}"
+for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
+## values
+"${animals[@]}"
+## keys
+"${!animals[@]}"
