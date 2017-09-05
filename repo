@@ -25,3 +25,6 @@ while read LINE;do
     git ls-remote origin | sed '/^.*tags.*/d'
     cd -
 done < repo_list.txt
+
+# force sync code
+while true;do repo sync -c --force-sync && break; done
