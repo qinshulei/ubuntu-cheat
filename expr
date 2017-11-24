@@ -1,0 +1,3 @@
+# substring by regex
+build_url=http://192.168.3.108:8080/job/estuary-ci-build/5/
+echo $(expr "${build_url}" : 'http.*/job/(.*)/')
