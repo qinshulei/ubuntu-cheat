@@ -1,0 +1,2 @@
+# get your link speed
+$ sudo ethtool eth3 | grep -i speed
