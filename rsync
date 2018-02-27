@@ -27,3 +27,4 @@ The ftp system does not allow creation of temp files. Instead you can direct rsy
 
 # rsync with diffrent port
 rsync -avz -e "ssh -p $portNumber" user@remoteip:/path/to/files/ /local/path/
+rsync -avzh --stats --progress njbuild16@192.168.67.126:/home/njbuild16/tools ~/tools
