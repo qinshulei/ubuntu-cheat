@@ -34,3 +34,6 @@ ssh -CfNg -R 1521:127.0.0.1:6300 oracle@172.16.1.164
 
 # For more information, see:
 # http://unix.stackexchange.com/q/12755/44856
+
+# sshfs mount
+sudo sshfs -o allow_other <username>@192.168.67.127:<serverpath> <localpath>
