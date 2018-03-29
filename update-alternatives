@@ -1,0 +1,5 @@
+# config java alternatives
+sudo update-alternatives --config java
+
+# show best version
+sudo update-alternatives --display java
