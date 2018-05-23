@@ -1,0 +1,2 @@
+# upload file
+lftp "ip" -e "login username password && cd '/ReadOnly/release/'  && get xxx.zip && bye"
