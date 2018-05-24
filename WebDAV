@@ -1,0 +1,11 @@
+# webdav mount
+sudo apt-get install -y davfs2
+mkdir /mnt/box
+mount -t davfs https://dav.box.com/dav /mnt/box
+vi /etc/davfs2/davfs2.conf
+# 找到“use_locks”，去掉前面的 # 然后把 1 改为 0 后保存。
+echo "https://dav.box.com/dav 邮箱 密码" > /etc/davfs2/secrets
+umount /mnt/box
+
+# 开机启动
+echo "mount -t davfs https://dav.box.com/dav /mnt/box" >> /etc/rc.local
