@@ -120,3 +120,6 @@ git worktree add yourpath your-branch
 
 # skip https check
 git config --global http.sslVerify false
+
+# config git
+HOME=/dev/null GIT_CONFIG_NOSYSTEM=1 git fetch --all
