@@ -24,3 +24,6 @@ find /home/www -type f -print0 | xargs -0 sed -i 's/subdomainA.example.com/subdo
 
 # replace by regex example
 sed -r 's#    ref: refs/changes/[0-9]+/(.*)#\1#g' | sed 's#/#,#g'
+
+# query line number
+cat some-file | sed -n '/startcontent/,/endcontent/{p}' | sed -n '/^$/='
