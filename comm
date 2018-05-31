@@ -1,0 +1,4 @@
+# compare two file, show common line
+sort xxx > file1
+sort xxx2 > file2
+comm -12 file1 file2
