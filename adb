@@ -195,4 +195,16 @@ adb kill-server
 adb start-server
 
 #### Restarts the adbd with root permissions.
-adb root 
+adb root
+
+## install apk
+adb devices
+adb disable-verity
+adb reboot
+adb remount
+adb shell
+cd /system/app/
+mkdir GooglePackageInstaller
+exit
+adb push path/to/GooglePackageInstaller.apk /system/app/GooglePackageInstaller
+adb logcat
