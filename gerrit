@@ -20,3 +20,6 @@ curl --digest  -k -u 'username':'gerrit http password' 'https://gerrit.url/a/cha
 
 # flush cache
 ssh -p 29418 review.example.com gerrit flush-caches --all
+
+# query paramters
+owner:xxx@xxx.com status:merged file:^.*java message:xxx
