@@ -3,3 +3,9 @@ zip -r {output.zip} {folder}
 
 # Extract .zip files to directory
 unzip {input.zip} -d {folder}
+
+# zip delete file
+zip --delete file.zip "assets/*"
+
+# zip info file
+zipinfo xxx.zip
