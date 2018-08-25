@@ -3,3 +3,5 @@ du -sk *| sort -rn
 
 # Check for size of folders in current working directory
 du -h --max-depth=1
+
+du -h -d 0 --exclude="home"
