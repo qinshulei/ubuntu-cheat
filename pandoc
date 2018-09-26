@@ -1,0 +1,36 @@
+# document convert tool
+
+## convert markdown to pdf
+pandoc \
+    --pdf-engine=xelatex \
+    -V title="test doc" \
+    -V author="qin shulei" \
+    -V date="$(date '+%Y%m%d')" \
+    -V fontsize=12pt \
+    -V mainfont='WenQuanYi Micro Hei' \
+    -V sansfont='WenQuanYi Zen Hei Sharp' \
+    -V monofont='WenQuanYi Zen Hei Mono' \
+    -V alignment=flushleft \
+    -V columns=80 \
+    -V toc=2 \
+    -V geometry:margin=1in \
+    -N \
+    README.md -f gfm -o result.pdf
+
+
+## convert markdown to docx
+pandoc \
+    --pdf-engine=xelatex \
+    -V title="test doc" \
+    -V author="qin shulei" \
+    -V date="$(date '+%Y%m%d')" \
+    -V fontsize=12pt \
+    -V mainfont='WenQuanYi Micro Hei' \
+    -V sansfont='WenQuanYi Zen Hei Sharp' \
+    -V monofont='WenQuanYi Zen Hei Mono' \
+    -V alignment=flushleft \
+    -V columns=80 \
+    -V toc=2 \
+    -V geometry:margin=1in \
+    -N \
+    README.md -f gfm -o result.docx
