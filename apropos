@@ -1,2 +1,8 @@
 # query comand line description
 apropos "what"
+
+# search description
+apropos "string or phrase"
+
+# search section
+apropos -s 1 delete
