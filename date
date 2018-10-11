@@ -12,3 +12,10 @@ date +%s.%N
 
 # make a dir with current date
 mkdir $(date +"%Y%m%d")
+
+# second from 1970
+date -u +'%s'
+
+# time convert
+date -u +'%s' --date='20180803'
+date --date='@1533254400'
