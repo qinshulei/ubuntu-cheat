@@ -1,2 +1,4 @@
+https://github.com/aspiers/git-deps
+
 # use git deps analysis commit dependency
 git deps --serve
