@@ -2,4 +2,12 @@
 mogrify -format png *.jpg
 
 # resize all png
-mogrify -resize 270x480   *.png 
+mogrify -resize 270x480   *.png
+
+mogrify -resize 780x1040 *.png
+
+# quality sharpen
+mogrify -quality 80 -sharpen .14 *.png
+
+# resize and low quality
+mogrify -quality 80 -sharpen .14 -resize 780x1040 *.png
