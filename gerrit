@@ -23,3 +23,7 @@ ssh -p 29418 review.example.com gerrit flush-caches --all
 
 # query paramters
 owner:xxx@xxx.com status:merged file:^.*java message:xxx
+
+# set prefered mail
+ssh -p 29418 user@review.example.com gerrit set-account --add-email xxx@xxx.com account
+ssh -p 29418 user@review.example.com gerrit set-account --preferred-email xxx@xxx.com account

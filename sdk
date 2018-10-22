@@ -1,0 +1,40 @@
+# java sdk manager tools
+# https://sdkman.io/
+
+# install java
+sdk install java
+
+# intall scala
+sdk install scala 2.12.1
+
+sdk uninstall scala 2.11.6
+
+# list sdk
+sdk list
+
+# list groovy version
+sdk list groovy
+
+# set scala version
+sdk use scala 2.12.1
+
+# set default scala version
+sdk default scala 2.11.6
+
+# set current java version
+sdk current java
+
+sdk current
+
+sdk upgrade springboot
+
+# offline mode
+sdk offline enable
+sdk offline disable
+
+# clean
+sdk flush temp
+sdk flush archives
+
+# install local version
+sdk install groovy 3.0.0-SNAPSHOT /path/to/groovy-3.0.0-SNAPSHOT

@@ -1,0 +1,6 @@
+# list all packages
+sdkmanager --list
+
+# install package
+sdkmanager "platform-tools"
+sdkmanager "platforms;android-27"
