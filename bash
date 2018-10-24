@@ -82,3 +82,13 @@ for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
 "${animals[@]}"
 ## keys
 "${!animals[@]}"
+
+# fix set -x
+[[ -o xtrace ]] && ts='set -x' || ts='set +x'; set +x
+eval "$ts"
+
+# get result in -e
+command && RET=$? || RET=$?
+
+# make comand alway success
+command && true
