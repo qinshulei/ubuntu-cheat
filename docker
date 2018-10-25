@@ -153,3 +153,8 @@ docker run -a stdin -a stdout -it --entrypoint=/bin/bash vmware/harbor-db-migrat
 ## docker remove useless storage
 $ docker system df #will show used space, similar to the unix tool df
 $ docker system prune # will remove all unused data.
+
+## limit network
+iptables -I DOCKER-USER -i ext_if ! -s 192.168.1.1 -j DROP
+iptables -I DOCKER-USER -i ext_if ! -s 192.168.1.0/24 -j DROP
+iptables -I DOCKER-USER -m iprange -i ext_if ! --src-range 192.168.1.1-192.168.1.3 -j DROP
