@@ -46,3 +46,7 @@ iptables -t nat -L -n
 # limit port
 iptables -A INPUT -p tcp --dport 8000 -s 1.2.3.4 -j ACCEPT
 iptables -A INPUT -p tcp --dport 8000 -j DROP
+
+# batch edit
+iptables-save > /tmp/ipt.txt
+iptables-restore < /tmp/ipt.txt
