@@ -28,3 +28,6 @@ done < repo_list.txt
 
 # force sync code
 while true;do repo sync -c --force-sync && break; done
+
+# reset to a time
+repo forall -c 'commitID=`git log --before "2018-10-9 01:00" -1 --pretty=format:"%H"`; git reset --hard $commitID'
