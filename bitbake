@@ -1,0 +1,7 @@
+# build bb module
+bitbake -b foo_1.0.bb
+bitbake -b foo.bb -c clean
+bitbake -c clean foo
+
+# build dep graph
+bitbake -g foo
