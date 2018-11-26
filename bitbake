@@ -5,3 +5,6 @@ bitbake -c clean foo
 
 # build dep graph
 bitbake -g foo
+
+# add github url
+git://github.com/GENIVI/wayland-ivi-extension.git;protocol=https;tag=1.13.0
