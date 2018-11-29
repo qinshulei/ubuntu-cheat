@@ -63,3 +63,12 @@ curl -u 'user':'password' -T target_file "http://192.168.67.50/remote.php/webdav
 curl -u user:pass -X MOVE --header 'Destination: http://example.org/owncloud/remote.php/webdav/target.jpg' http://example.org/owncloud/remote.php/webdav/source.jpg
 ## webdav get file
 curl --digest --user username:password  https://store-12345.mybigcommerce.com/dav/exports/products-2012-10-05.csv --output products-2012-10-05.csv
+
+
+## process cookie
+curl -X POST -c ${temp_dir}/cookie_gerrit.txt \
+               --data-urlencode "username=${GERRIT_HTTP_USER}" \
+               --data-urlencode "password=${GERRIT_HTTP_PASSWORD}" \
+          "${GERRIT_HTTP_BASE_URL}/login/"
+
+curl -X GET -b ${temp_dir}/cookie_gerrit.txt "${GERRIT_HTTP_BASE_URL}/plugins/gitiles/${project}/+log/${old_sha1}..${new_sha1}?format=JSON" | sed '1d'
