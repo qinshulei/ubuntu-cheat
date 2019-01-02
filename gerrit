@@ -27,3 +27,6 @@ owner:xxx@xxx.com status:merged file:^.*java message:xxx
 # set prefered mail
 ssh -p 29418 user@review.example.com gerrit set-account --add-email xxx@xxx.com account
 ssh -p 29418 user@review.example.com gerrit set-account --preferred-email xxx@xxx.com account
+
+# query by time example
+status:merged branch:branch-name after:2018-12-28
