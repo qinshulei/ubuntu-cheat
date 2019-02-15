@@ -1,0 +1,3 @@
+# convert wam to mp3
+
+mplayer -vo null -vc dummy -af resample=44100 -ao pcm -ao pcm:waveheader $i && lame -m s audiodump.wav -o $i

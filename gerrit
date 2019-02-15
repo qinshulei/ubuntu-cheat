@@ -30,3 +30,5 @@ ssh -p 29418 user@review.example.com gerrit set-account --preferred-email xxx@xx
 
 # query by time example
 status:merged branch:branch-name after:2018-12-28
+
+status:merged (branch:branch1 OR branch:branch2) after:2019-01-22 (NOT owner:ci-bot)
