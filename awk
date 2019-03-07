@@ -16,3 +16,12 @@ awk 'BEGIN { FS = "\t" } ; { print "+ [`",$1,"`](",$2,")" }' ppurl.txt
 
 # find line repeat >3
 awk '{c[$0]++} END {for (i in c) {if (c[i] > 3) {print i}}}' <file-name>
+
+
+# get lines from log
+function get_lines(){
+    filename=$1
+    start_line=$2
+    end_line=$3
+    awk -v start_line=$start_line -v end_line=$end_line 'NR>=start_line && NR<=end_line' $filename
+}
