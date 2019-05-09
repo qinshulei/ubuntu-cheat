@@ -126,3 +126,6 @@ HOME=/dev/null GIT_CONFIG_NOSYSTEM=1 git fetch --all
 
 # show commit change with file list
 git log --committer="xxx1.com" --committer="xxx2.com" --committer="xxx3.com" --committer="xxx4.com" --name-status
+
+# set commit template
+git config --global commit.template git-commit-template.txt

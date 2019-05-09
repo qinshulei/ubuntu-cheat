@@ -46,3 +46,6 @@ find . -type f -samefile MY_FILE_HERE 2>/dev/null
 # like repo forall by by find
 find . -type d -name '*.git' | cut -c 3- | while read REPO_PROJECT; do (cd $REPO_PROJECT; git remote add ts file:///home/gerrit2/review_site/git/asr/$REPO_PROJECT); done
 find . -type d -name '*.git' | cut -c 3- | while read REPO_PROJECT; do (cd $REPO_PROJECT; git push ts --all); done
+
+# delete old file by find
+find /path/to/ -type f -mtime +5 -name '*.gz' -execdir rm -- '{}' \;
