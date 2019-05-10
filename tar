@@ -30,3 +30,6 @@ tar -czf - test.pdf | split -b 1000000 - test.tar.gz
 
 # extract from split
 cat test.tar.gz.a* | tar xzf
+
+# cp file support softlink
+tar -c src | tar xv -C dst
