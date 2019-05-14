@@ -1,0 +1,4 @@
+# find command installed by which debain package
+sudo apt-get install apt-file
+apt-file update
+apt-file find /usr/bin/column
