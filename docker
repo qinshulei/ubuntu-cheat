@@ -171,3 +171,6 @@ sudo iptables -I DOCKER-USER -p tcp --dport 8080 -j REJECT --reject-with icmp-po
 sudo iptables -I DOCKER-USER -p tcp --dport 8080 -s 192.168.67.151 -j ACCEPT
 sudo iptables -I DOCKER-USER -p tcp --dport 8080 -s 192.168.65.49 -j ACCEPT
 sudo iptables -t filter -L -n
+
+## remove useless docker images
+docker images | grep -E '^<none>' | awk '{print $3}' | xargs -n1 docker rmi
