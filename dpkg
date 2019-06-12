@@ -14,3 +14,7 @@ sudo dpkg -r package_name
 root@ci-lava:/# dpkg --list | grep lava
 ii  lava-dispatcher                   2017.5+4665.2adaae6f-1         amd64        Linaro Automated Validation Architecture dispatcher
 root@ci-lava:/# dpkg -L lava-dispatcher
+
+
+# show this package install binary
+dpkg -L android-tools-fsutils
