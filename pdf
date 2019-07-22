@@ -1,0 +1,5 @@
+# diff pdf
+
+pdftotext file1.pdf
+pdftotext file2.pdf
+diff file1.txt file2.txt

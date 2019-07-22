@@ -19,3 +19,6 @@ date -u +'%s'
 # time convert
 date -u +'%s' --date='20180803'
 date --date='@1533254400'
+
+# show week and day
+echo W$(date +'%W.%u')
