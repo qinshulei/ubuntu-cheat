@@ -38,3 +38,4 @@ ssh -CfNg -R 1521:127.0.0.1:6300 oracle@172.16.1.164
 # sshfs mount
 sudo sshfs -o allow_other <username>@192.168.67.127:<serverpath> <localpath>
 sudo sshfs -o allow_other -p 15514 ts@192.168.67.125:/home/ts ./your-workspace
+sudo sshfs -o allow_other -o idmap=user -o uid=1000 -p xxxx username@xxx.xxx.xxx.xxx:/home/xx /mnt/xxx

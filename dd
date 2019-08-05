@@ -1,0 +1,17 @@
+# check disk performance
+dd if=path/to/input_file of=/path/to/output_file bs=block_size count=number_of_blocks
+
+# check disk write
+time dd if=/dev/zero of=/testw.dbf bs=4k count=100000
+
+# check disk read
+time dd if=/dev/sdb of=/dev/null bs=4k
+
+# check disk read and write
+time dd if=/dev/sdb of=/testrw.dbf bs=4k
+
+# check disk pure write
+dd if=/dev/zero of=test bs=8k count=10000 oflag=direct
+
+# check disk pure read
+dd if=test of=/dev/null bs=8k count=10000 iflag=direct
