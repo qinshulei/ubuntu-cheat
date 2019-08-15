@@ -1,0 +1,2 @@
+# show all project in manifest
+cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n 

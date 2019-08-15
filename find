@@ -49,3 +49,6 @@ find . -type d -name '*.git' | cut -c 3- | while read REPO_PROJECT; do (cd $REPO
 
 # delete old file by find
 find /path/to/ -type f -mtime +5 -name '*.gz' -execdir rm -- '{}' \;
+
+# find all git project in gerrit
+find . -name "*.git" | grep -v ".repo" | wc -l

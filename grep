@@ -38,3 +38,9 @@ ps aux | grep -E --color 'bash|$'
 #   -A, --after-context=NUM   print NUM lines of trailing context
 #   -C, --context=NUM         print NUM lines of output context
 grep -A 10 -B 10 pattern content
+
+# check all manifest have revision
+cat default.xml | grep -v "revision" | grep -v "</" | grep -v "linkfile" | grep -v "manifest" | grep -v "copyfile"
+
+# check manifest have special branch, not sha1 or tag
+cat default.xml | grep "revision" | grep -v default| grep -v -E "[0-9a-z]{21}" | grep -v "refs/tags/"
