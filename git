@@ -129,3 +129,6 @@ git log --committer="xxx1.com" --committer="xxx2.com" --committer="xxx3.com" --c
 
 # set commit template
 git config --global commit.template git-commit-template.txt
+
+## push gerrit merged changes
+for sha1 in $(git log --no-merges --author="@mail.com" --format="%H" | tac); do git push origin $sha1:refs/for/target_branch%merged; done
