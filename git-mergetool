@@ -1,0 +1,25 @@
+# usage
+git mergetool
+
+# use meld
+git mergetool --tool=meld
+
+bc
+bc3
+codecompare
+deltawalker
+diffmerge
+diffuse
+ecmerge
+examdiff
+guiffy
+gvimdiff
+gvimdiff2
+gvimdiff3
+kdiff3
+opendiff
+p4merge
+tkdiff
+tortoisemerge
+winmerge
+xxdiff
