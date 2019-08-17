@@ -1,2 +1,6 @@
 # query comand line description
 apropos "what"
+
+# example
+$ apropos ipcalc
+ipcalc (1)           - An IPv4 Netmask/broadcast/etc calculator

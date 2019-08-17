@@ -123,3 +123,6 @@ git config --global http.sslVerify false
 
 # config git
 HOME=/dev/null GIT_CONFIG_NOSYSTEM=1 git fetch --all
+
+# commit format
+git log --pretty=format:"%h %ce ----------------- %s"
