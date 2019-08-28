@@ -132,3 +132,16 @@ git config --global commit.template git-commit-template.txt
 
 ## push gerrit merged changes
 for sha1 in $(git log --no-merges --author="@mail.com" --format="%H" | tac); do git push origin $sha1:refs/for/target_branch%merged; done
+
+## git log to csv
+### Local Dates:
+git log --date=local --pretty=format:"%h%x09%an%x09%ad%x09%s" > commits.local.csv
+### ISO Dates:
+git log --date=iso --pretty=format:"%h%x09%an%x09%ad%x09%s" > commits.iso.scv
+### use , to sperate
+git log --pretty=format:%h,%an,%ae,%s > /path/to/file.csv
+### get last month csv
+git log --since="last month" --pretty=format:'%h,%an,%ar,%s' > log.csv
+
+## remove remote
+git remote rm sofake
