@@ -1,2 +1,8 @@
 # Printout disk free space in a human readable format
 df -h
+
+# show disk percent
+df --output=pcent /home/ | sed '1d;s/ //g'
+
+# disk usage
+df -h / | awk '/\// {print $(NF-1)}'
