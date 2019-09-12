@@ -32,3 +32,7 @@ ssh -p 29418 user@review.example.com gerrit set-account --preferred-email xxx@xx
 status:merged branch:branch-name after:2018-12-28
 
 status:merged (branch:branch1 OR branch:branch2) after:2019-01-22 (NOT owner:ci-bot)
+
+
+# query gerritid by topic
+ssh -p 29418 user@review.example.com gerrit query topic:xxxxx | grep number: | awk -F ': ' '{print $2}' | sort | uniq | xargs
