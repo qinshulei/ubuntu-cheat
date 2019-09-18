@@ -36,3 +36,6 @@ status:merged (branch:branch1 OR branch:branch2) after:2019-01-22 (NOT owner:ci-
 
 # query gerritid by topic
 ssh -p 29418 user@review.example.com gerrit query topic:xxxxx | grep number: | awk -F ': ' '{print $2}' | sort | uniq | xargs
+
+# query cherry-pick list for git fetch
+ssh -p 29418 user@review.example.com gerrit query topic:xxxxx --current-patch-set | egrep -e 'ref:' -e "project:" | awk -F ': ' '{print $2}' | sed 'N;s/\n/ /'
