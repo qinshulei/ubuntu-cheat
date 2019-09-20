@@ -25,3 +25,6 @@ function get_lines(){
     end_line=$3
     awk -v start_line=$start_line -v end_line=$end_line 'NR>=start_line && NR<=end_line' $filename
 }
+
+# filter commit-msg summary
+echo '[xxx][xxx][xxxx][jira_project-451]xxxxxx' | cut -d"["  --output-delimiter=" " -f 1- | cut -d"]"  --output-delimiter=" " -f 1- | tr " " "\n" | awk -F' ' '/jira_project_*/{print}'
