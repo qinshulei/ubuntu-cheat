@@ -39,3 +39,6 @@ ssh -p 29418 user@review.example.com gerrit query topic:xxxxx | grep number: | a
 
 # query cherry-pick list for git fetch
 ssh -p 29418 user@review.example.com gerrit query topic:xxxxx --current-patch-set | egrep -e 'ref:' -e "project:" | awk -F ': ' '{print $2}' | sed 'N;s/\n/ /'
+
+# review by topic
+for revision in $(ssh -p 29418 user@review.example.com gerrit query --current-patch-set --format=JSON topic:xxxxxxx | sed '$d' | jq '.currentPatchSet.revision'); do revision=$(echo $revision | sed 's/\"//g'); ssh -p 29418 user@review.example.com gerrit review --code-review +1 $revision; done
