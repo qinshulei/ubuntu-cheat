@@ -42,3 +42,6 @@ ssh -p 29418 user@review.example.com gerrit query topic:xxxxx --current-patch-se
 
 # review by topic
 for revision in $(ssh -p 29418 user@review.example.com gerrit query --current-patch-set --format=JSON topic:xxxxxxx | sed '$d' | jq '.currentPatchSet.revision'); do revision=$(echo $revision | sed 's/\"//g'); ssh -p 29418 user@review.example.com gerrit review --code-review +1 $revision; done
+
+# push patch
+for sha1 in $(echo "$(git log xxxxxxx..HEAD --pretty=format:"%H" --no-merges)" | tac); do git push origin $sha1:refs/for/xxx_branch%submit; done
