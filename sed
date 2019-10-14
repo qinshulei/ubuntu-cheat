@@ -27,3 +27,6 @@ sed -r 's#    ref: refs/changes/[0-9]+/(.*)#\1#g' | sed 's#/#,#g'
 
 # query line number
 cat some-file | sed -n '/startcontent/,/endcontent/{p}' | sed -n '/^$/='
+
+# add suffix
+repo list -n | sed 's#^#ssh://gerrit.com:29418/xxx/#g'
