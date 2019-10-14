@@ -31,3 +31,20 @@ while true;do repo sync -c --force-sync && break; done
 
 # reset to a time
 repo forall -c 'commitID=`git log --before "2018-10-9 01:00" -1 --pretty=format:"%H"`; git reset --hard $commitID'
+
+# clean code
+epo forall -j 24 -c 'pwd;
+     git clean -dfx 2>&1 > /dev/null || true;
+     git reset --hard 2>&1 > /dev/null || true;
+     git checkout -f 2>&1 > /dev/null || true;
+     git cherry-pick --abort 2>&1 > /dev/null || true;
+     git am --abort 2>&1 > /dev/null || true;
+     git rebase --abort 2>&1 > /dev/null || true' > /dev/null
+repo sync -j2 -c --no-tags -d
+repo forall -j 24 -c 'pwd;
+     git clean -dfx 2>&1 > /dev/null || true;
+     git reset --hard 2>&1 > /dev/null || true;
+     git checkout -f 2>&1 > /dev/null || true;
+     git cherry-pick --abort 2>&1 > /dev/null || true;
+     git am --abort 2>&1 > /dev/null || true;
+     git rebase --abort 2>&1 > /dev/null || true' > /dev/null
