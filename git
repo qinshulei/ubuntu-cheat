@@ -148,3 +148,13 @@ git remote rm sofake
 
 ## show all branches contains special commit
  git branch -a --contains xxxxxxxxxxxxxxxxxx
+
+## show ancestry path commit
+git log <SHA1>..HEAD --ancestry-path --merges
+
+
+## show the commit graph bu filter, verfy important for graph usage
+git rev-list
+
+## parse revision
+git rev-parse xxx
