@@ -145,3 +145,6 @@ git log --since="last month" --pretty=format:'%h,%an,%ar,%s' > log.csv
 
 ## remove remote
 git remote rm sofake
+
+## show all branches contains special commit
+ git branch -a --contains xxxxxxxxxxxxxxxxxx

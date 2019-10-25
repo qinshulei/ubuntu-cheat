@@ -1,0 +1,8 @@
+# open a range url
+urls=(
+ # url
+)
+
+for url in ${urls[@]};do
+   xdg-open $url
+done
