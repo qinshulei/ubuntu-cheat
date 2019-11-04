@@ -158,3 +158,7 @@ git rev-list
 
 ## parse revision
 git rev-parse xxx
+
+
+## show gitconfig source
+git config --list --show-origin
