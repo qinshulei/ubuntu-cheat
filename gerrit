@@ -45,3 +45,6 @@ for revision in $(ssh -p 29418 user@review.example.com gerrit query --current-pa
 
 # push patch
 for sha1 in $(echo "$(git log xxxxxxx..HEAD --pretty=format:"%H" --no-merges)" | tac); do git push origin $sha1:refs/for/xxx_branch%submit; done
+
+# push merged patch
+for sha1 in $(echo "$(git log xxxx..HEAD --pretty=format:"%H" --no-merges)" | tac); do git push origin $sha1:refs/for/xxx_BRANCH%merged; done
