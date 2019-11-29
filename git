@@ -162,3 +162,7 @@ git rev-parse xxx
 
 ## show gitconfig source
 git config --list --show-origin
+
+## merge with commit message
+git merge $SHA1 --no-edit --no-stat --log=300 --no-ff -m "$COMMIT_MSG"
+git commit --amend --no-edit
