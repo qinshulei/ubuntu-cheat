@@ -166,3 +166,9 @@ git config --list --show-origin
 ## merge with commit message
 git merge $SHA1 --no-edit --no-stat --log=300 --no-ff -m "$COMMIT_MSG"
 git commit --amend --no-edit
+
+## allow fetch sha1
+for each_project in $(find /home/git_mirror -name "*.git");do
+  cd "${each_project}"
+  git config uploadpack.allowReachableSHA1InWant true
+done
