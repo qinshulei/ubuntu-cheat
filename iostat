@@ -6,3 +6,6 @@ iostat -d sda
 
 # show disk status with MB
 iostat -m
+
+# check io stat
+iostat -xdm 1
