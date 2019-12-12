@@ -1,0 +1,2 @@
+# load into memory
+vmtouch -dl -i .git -i .repo ~/.emacs.d ~/.spacemacs.d
