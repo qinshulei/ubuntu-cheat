@@ -1,0 +1,14 @@
+# windows ssh port
+
+# forward port
+netsh interface portproxy add v4tov4 listenport=8443 connectaddress=xxx.xxx.xxx.xxx connectport=8443
+netsh interface portproxy add v4tov4 listenport=2222 connectaddress=xxx.xxx.xxx.xxx connectport=22
+
+# list port forward
+netsh interface portproxy show all
+
+# delete port
+netsh interface portproxy delete v4tov4 listenport=8443
+
+# reset port
+netsh interface portproxy add v4tov4 listenport=8443 connectaddress=xxx.xxx.xxx.xxx connectport=8443

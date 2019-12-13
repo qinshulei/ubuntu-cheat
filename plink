@@ -1,0 +1,4 @@
+# windows ssh port socks5
+
+## forward ssh to sock5
+plink -N name@xxx.xxx.xxx.xxx -P 22 -pw xxx -D 127.0.0.1:17070
