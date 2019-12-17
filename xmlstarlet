@@ -1,2 +1,5 @@
 # show all project in manifest
-cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n 
+cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n
+
+# show all parent projects
+cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n | awk -F'/' '{print $1}' | sort | uniq
