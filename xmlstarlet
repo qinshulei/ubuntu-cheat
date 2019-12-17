@@ -3,3 +3,6 @@ cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project
 
 # show all parent projects
 cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n | awk -F'/' '{print $1}' | sort | uniq
+
+# get name and path from manifest
+cat default.xml | xmlstarlet sel -t -m "/manifest/project" -v 'concat(@name," ",@path)' -n
