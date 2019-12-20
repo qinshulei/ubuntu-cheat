@@ -75,5 +75,8 @@ curl -X GET -b ${temp_dir}/cookie_gerrit.txt "${GERRIT_HTTP_BASE_URL}/plugins/gi
 
 
 ## get all qcom projects
-
 curl https://source.codeaurora.org/ | hxselect 'td.sublevel-repo a' | sed '1i<xml>' | sed '$a</xml>' | xmlstarlet sel -t -m "/xml/a" -v "concat(@href, ' ')" | xargs -n 1 | sed -E 's#^([^/]*)/#\1#g; s#/([^/]*)$#\1#g'
+
+# get all aosp projects
+export https_proxy=http://ldap:username@proxy
+curl https://android.googlesource.com/ | hxnormalize -x | hxselect 'body div.RepoList a.RepoList-item' | sed '1i<xml>' | sed '$a</xml>' | xmlstarlet sel -t -m "/xml/a" -v "concat(@href, ' ')" | xargs -n 1 | sed -E 's#^([^/]*)/#\1#g; s#/([^/]*)$#\1#g'
