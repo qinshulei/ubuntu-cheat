@@ -72,3 +72,8 @@ curl -X POST -c ${temp_dir}/cookie_gerrit.txt \
           "${GERRIT_HTTP_BASE_URL}/login/"
 
 curl -X GET -b ${temp_dir}/cookie_gerrit.txt "${GERRIT_HTTP_BASE_URL}/plugins/gitiles/${project}/+log/${old_sha1}..${new_sha1}?format=JSON" | sed '1d'
+
+
+## get all qcom projects
+
+curl https://source.codeaurora.org/ | hxselect 'td.sublevel-repo a' | sed '1i<xml>' | sed '$a</xml>' | xmlstarlet sel -t -m "/xml/a" -v "concat(@href, ' ')" | xargs -n 1 | sed -E 's#^([^/]*)/#\1#g; s#/([^/]*)$#\1#g'

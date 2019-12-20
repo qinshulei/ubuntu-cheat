@@ -33,3 +33,6 @@ repo list -n | sed 's#^#ssh://gerrit.com:29418/xxx/#g'
 
 # wrap xml
 echo abc | sed '1i<xml>' | sed '$a</xml>'
+
+# remove first char / and last char / each line
+sed -E 's#^([^/]*)/#\1#g; s#/([^/]*)$#\1#g'
