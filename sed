@@ -30,3 +30,6 @@ cat some-file | sed -n '/startcontent/,/endcontent/{p}' | sed -n '/^$/='
 
 # add suffix
 repo list -n | sed 's#^#ssh://gerrit.com:29418/xxx/#g'
+
+# wrap xml
+echo abc | sed '1i<xml>' | sed '$a</xml>'
