@@ -52,3 +52,9 @@ find /path/to/ -type f -mtime +5 -name '*.gz' -execdir rm -- '{}' \;
 
 # find all git project in gerrit
 find . -name "*.git" | grep -v ".repo" | wc -l
+
+# rm all empty dir recursively
+while [ -n "$(find . -depth -type d -empty -print -exec rmdir {} +)" ]; do :; done
+
+# rm all empty dir
+find . -type d -empty -delete
