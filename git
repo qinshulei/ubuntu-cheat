@@ -172,3 +172,7 @@ for each_project in $(find /home/git_mirror -name "*.git");do
   cd "${each_project}"
   git config uploadpack.allowReachableSHA1InWant true
 done
+
+
+# diff changes
+git log --oneline --no-merges --pretty=format:"%H %an %cd %s" --date=format:'%Y/%m/%d' origin/xxx..origin/xxx > log_diff.txt
