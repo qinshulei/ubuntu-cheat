@@ -178,3 +178,9 @@ sudo iptables -t filter -L -n
 
 ## remove useless docker images
 docker images | grep -E '^<none>' | awk '{print $3}' | xargs -n1 docker rmi
+
+## docker for loop
+for docker_container_name in $(docker ps --format '{{.Names}}' | grep opengrok);do
+    echo "####################  $docker_container_name"
+    docker exec -it  $docker_container_name bash -c 'ls /tomcat8/temp'
+done
