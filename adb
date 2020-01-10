@@ -61,6 +61,11 @@ $ pm dump <name>
 #### Path to the apk file.
 $ pm path <package>
 
+#### to grab the package information such as version identifiers etc
+$ dumpsys | grep -A18 "Package \[my.package\]"
+
+#### show current window
+adb shell dumpsys window windows  | grep 'Window #'
 
 ### Permissions
 #### Permission groups definitions.
