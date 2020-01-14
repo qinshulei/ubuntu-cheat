@@ -1,0 +1,24 @@
+# instal convert tool
+sudo apt-get install imagemagick
+
+# change image format
+convert howtogeek.png howtogeek.jpg
+convert howtogeek.png -quality 95 howtogeek.jpg
+
+
+# resize image
+convert example.png -resize 200x100 example.png
+
+
+# resize image with width
+convert example.png -resize 200 example.png
+
+# resize image with height
+convert example.png -resize x100 example.png
+
+# Rotating an Image
+convert howtogeek.jpg -rotate 90 howtogeek-rotated.jpg
+
+
+# batch process
+for file in *.png; do convert $file -rotate 90 rotated-$file; done
