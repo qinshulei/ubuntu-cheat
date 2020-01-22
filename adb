@@ -213,3 +213,6 @@ mkdir GooglePackageInstaller
 exit
 adb push path/to/GooglePackageInstaller.apk /system/app/GooglePackageInstaller
 adb logcat
+
+## boardcast
+adb shell am broadcast -a xxxxxxx --ez xxxxx true
