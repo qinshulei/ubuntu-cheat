@@ -2,3 +2,8 @@
 sudo apt-get install apt-file
 apt-file update
 apt-file find /usr/bin/column
+
+# list package files or lib
+apt-file search cv.py
+apt-file list python-opencv
+apt-file search libgthread-2.0.so.0
