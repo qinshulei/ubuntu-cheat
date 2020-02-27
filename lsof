@@ -1,0 +1,2 @@
+# show file open numerber by user
+lsof -u gerrit2 | wc -l
