@@ -176,3 +176,6 @@ done
 
 # diff changes
 git log --oneline --no-merges --pretty=format:"%H %an %cd %s" --date=format:'%Y/%m/%d' origin/xxx..origin/xxx > log_diff.txt
+
+# use git save http password
+git config --global credential.helper store
