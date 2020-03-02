@@ -216,3 +216,10 @@ adb logcat
 
 ## boardcast
 adb shell am broadcast -a xxxxxxx --ez xxxxx true
+
+## close se linux
+Adb root
+Adb remount
+Adb shell setenforce 0
+
+Adb shell getenforce
