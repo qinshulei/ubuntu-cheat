@@ -223,3 +223,6 @@ Adb remount
 Adb shell setenforce 0
 
 Adb shell getenforce
+
+## monkey test
+adb shell monkey --ignore-crashes --ignore-timeouts --kill-process-after-error --ignore-security-exceptions --throttle 500 -v -v -v -s 5 60000000>/sdcard/monkeylog.txt
