@@ -1,3 +1,5 @@
+# documents : http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html
+
 # show all project in manifest
 cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project" -v "@name" -n
 
@@ -6,3 +8,75 @@ cat default.xml | grep -v "notdefault" | xmlstarlet sel -t -m "/manifest/project
 
 # get name and path from manifest
 cat default.xml | xmlstarlet sel -t -m "/manifest/project" -v 'concat(@name," ",@path)' -n
+
+# valid xml
+xmlstarlet val -e file.xml
+
+# change xml proterty
+xmlstarlet ed -u "//manifest/remote/@name" -v 'origin' manifest.xml
+
+# change first xml property
+xmlstarlet ed -u "//settings[1]/setting/@name" -v 'local directory2' file.xml
+
+# edit file inplace
+xmlstarlet ed -L -u "//settings/setting/@name" -v 'local directory2' file.xml
+
+# find the XPath you need
+xmlstarlet sel -t                                                            \
+        -m '//node[@name="fs100"]/parent::list[@name="CRproductionLoadshare"]' \
+        -c . -n foo.xml
+
+xmlstarlet sel -t                                                        \
+       -m '//list[@name="CRproductionLoadshare" and node[@name="fs100"]]'  \
+       -c . -n foo.xml
+
+xmlstarlet sel -t                                                        \
+       -m '//list[@name="CRproductionLoadshare" and not(node[@name="fs102"])]'  \
+       -c . -n foo.xml
+
+
+# edit your XML-file with the XPath you just found
+xpath1='//list[@name="CRproductionLoadshare" and not(node[@name="fs102"])]'
+xpath2='//list[@name="CRproductionLoadshare" and not(node[@name="fs102" and @weight="2"])]/node[last()]'
+xmlstarlet ed -s ${xpath1} -t elem -n "node"   -v ""      \
+                -i ${xpath2} -t attr -n "name"   -v "fs102" \
+                -i ${xpath2} -t attr -n "weight" -v "2"     \
+                foo.xml
+
+
+xmlstarlet ed -i ${xpath0} -t attr -n "delete" -v "1"     \
+                -s ${xpath1} -t elem -n "node"   -v ""      \
+                -i ${xpath2} -t attr -n "name"   -v "fs102" \
+                -i ${xpath2} -t attr -n "weight" -v "2"     \
+                -d ${xpath3}                                \
+                foo.xml
+
+# delete one node
+xmlstarlet ed -d '//selectedCodeComponents/string' file.xml
+
+#  add new string subnodes like this
+xmlstarlet ed -d '//selectedCodeComponents/string' file.xml |
+xmlstarlet ed -s '//selectedCodeComponents' -t elem -n string -v something1 |
+xmlstarlet ed -s '//selectedCodeComponents' -t elem -n string -v something2 |
+xmlstarlet ed -s '//selectedCodeComponents' -t elem -n string -v something3
+
+
+# 1) if you need to delete whole string elements, use below code
+xmlstarlet ed -P -S -d "/mm2-moduleset/.../selectedCodeComponents/string" config.xml >temp.xml
+mv temp.xml config.xml
+
+# 2) if you have to delete a particular string element, use below code
+read -p "read the string that need to be deleted" deleteString
+xmlstarlet ed -P -S -d "/mm2-moduleset/.../selectedCodeComponents/string[text()='$deleteString']" config.xml >temp.xml
+mv temp.xml config.xml
+
+# 3) if you have to replace the strings based on user input, you can try the below code
+read - "read the string that need to be modify" modifyString1 modifyString2 modifyString3
+xmlstarlet ed -P -S -s "/mm2-moduleset/.../selectedCodeComponents" -t elem -n string -v $modifyString1 -s "/mm2-moduleset/.../selectedCodeComponents" -t elem -n string -v $modifyString2 -s "/mm2-moduleset/.../selectedCodeComponents" -t elem -n string -v $modifyString3 config.xml >temp.xml
+mv temp.xml config.xml
+
+
+# remove notdefault prjoects
+```
+xmlstarlet ed -d '//project[contains(@groups,"notdefault")]' SDM660.LA.3.0.2-r00004.1.xml
+```
