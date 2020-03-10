@@ -1,0 +1,2 @@
+# diff directory
+diff -Naur  base/ target/ | less
