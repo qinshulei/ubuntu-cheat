@@ -1,2 +1,11 @@
 # upload file
 lftp "ip" -e "login username password && cd '/ReadOnly/release/'  && get xxx.zip && bye"
+
+# download parallel
+lftp -e 'pget -n 5 -c http://kernel.org/pub/linux/kernel/v2.6/linux-2.6.22.2.tar.bz2'
+
+# upload dir
+lftp ftp://xxxx -e 'login xxxx xxxx && mirror -Rc /home/ci/jenkins/workspace/xxxx && bye'
+
+# get one file
+lftp ftp://xxxx/ -e 'login xxxx xxxxx && get ftp://192.168.xx/xxxx.zip'
