@@ -22,3 +22,7 @@ date --date='@1533254400'
 
 # show week and day
 echo W$(date +'%W.%u')
+
+
+# gerrit time
+date +"%%22%Y-%m-%d%%20%H:%M:%S%%20%%2B0800%%22"
