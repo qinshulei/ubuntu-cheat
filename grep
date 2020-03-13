@@ -44,3 +44,6 @@ cat default.xml | grep -v "revision" | grep -v "</" | grep -v "linkfile" | grep 
 
 # check manifest have special branch, not sha1 or tag
 cat default.xml | grep "revision" | grep -v default| grep -v -E "[0-9a-z]{21}" | grep -v "refs/tags/"
+
+# fix Binary file (standard input) matches
+cat xxxx | grep -a xxxx
