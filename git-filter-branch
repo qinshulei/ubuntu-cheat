@@ -1,0 +1,54 @@
+# rm file from history
+git filter-branch --index-filter "git ls-files | grep -v pilot/tag_extractor.py | xargs git rm --cached" --prune-empty
+
+# move file from all history
+git filter-branch -f --tree-filter "if [[ -e pilot/tag_extractor.py ]]; then mv pilot/tag_extractor.py tag_extractor.py; fi;"
+
+# rename a user
+git filter-branch --commit-filter '
+        if [ "$GIT_COMMITTER_NAME" = "--Nathan McCorkle" ];
+        then
+                GIT_COMMITTER_NAME="Nathan McCorkle";
+                GIT_AUTHOR_NAME="Nathan McCorkle";
+                GIT_COMMITTER_EMAIL="nmz787@gmail.com";
+                GIT_AUTHOR_EMAIL="nmz787@gmail.com";
+                git commit-tree "$@";
+        else
+                git commit-tree "$@";
+        fi' HEAD
+
+# rm some file changes
+git filter-branch -f --index-filter "git rm -r -f --cached --ignore-unmatch $(ls -xd trainers/ text/ stats/ gfx/ audio/ battle/)" --prune-empty -- --all
+
+git filter-branch -f --tree-filter "git rm -rf -f --cached --ignore-unmatch README.md compare.sh constants.asm main.asm INSTALL.md Makefile main.asm pokecrystal.asm wram.asm vblank.asm bittable2.asm" --prune-empty -- --all
+
+git filter-branch --tag-name-filter cat --prune-empty --msg-filter 'python ~/scripts/commit-cleaner.py' -- --all
+
+git filter-branch --index-filter "git update-index --remove README.md compare.sh constants.asm main.asm INSTALL.md Makefile main.asm pokecrystal.asm wram.asm vblank.asm bittable2.asm trainers/ text/ stats/ gfx/ audio/ battle/ music/" --
+
+git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch README.md compare.sh constants.asm main.asm INSTALL.md Makefile main.asm pokecrystal.asm wram.asm vblank.asm bittable2.asm trainers/ text/ stats/ gfx/ audio/ battle/ music/ README .hgignore textpre.awk data/" HEAD
+
+git filter-branch --prune-empty
+
+git filter-branch -f --commit-filter "git rm -r -f --cached --ignore-unmatch README.md compare.sh constants.asm main.asm INSTALL.md Makefile main.asm pokecrystal.asm wram.asm vblank.asm bittable2.asm trainers/ text/ stats/ gfx/ audio/ battle" --prune-empty -- --all
+
+
+# move files out of a subdirectory
+git filter-branch --tree-filter 'test -d extras/ && mv extras/* . || echo "Nope"' HEAD
+git filter-branch --tree-filter 'test -d extras/ && mv extras crystal && (test -d preprocessor.py && mv preprocessor.py crystal/ || echo "hi") || echo "Nope"' HEAD
+
+# prune empty merges ??
+# http://git.661346.n2.nabble.com/Removing-useless-merge-commit-with-quot-filter-branch-quot-td7356544.html
+git filter-branch -f --prune-empty --parent-filter ~/scripts/git-rewrite-parent.rb master
+
+git filter-branch --commit-filter '
+        if [ "$GIT_COMMITTER_NAME" = "padz" ];
+        then
+                GIT_COMMITTER_NAME="yenatch";
+                GIT_AUTHOR_NAME="yenatch";
+                GIT_COMMITTER_EMAIL="yenatch@gmail.com";
+                GIT_AUTHOR_EMAIL="yenatch@gmail.com";
+                git commit-tree "$@";
+        else
+                git commit-tree "$@";
+        fi' HEAD
