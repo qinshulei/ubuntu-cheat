@@ -80,3 +80,13 @@ mv temp.xml config.xml
 ```
 xmlstarlet ed -d '//project[contains(@groups,"notdefault")]' SDM660.LA.3.0.2-r00004.1.xml
 ```
+
+# if logic to support path don't exist
+
+xmlstarlet sel -t -m "manifest/project" \
+     --if "@path=''" \
+     -v "concat(@path, ' ' ,@revision)" \
+     --else \
+      -v "concat(@name, ' ' ,@revision)" \
+     --break \
+    -n code-2020-03-24-origin.xml
