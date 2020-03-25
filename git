@@ -179,3 +179,10 @@ git log --oneline --no-merges --pretty=format:"%H %an %cd %s" --date=format:'%Y/
 
 # use git save http password
 git config --global credential.helper store
+
+
+# git log with filechange
+git log --name-status
+
+# git log with changes
+git log --stat
