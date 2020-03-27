@@ -186,3 +186,6 @@ git log --name-status
 
 # git log with changes
 git log --stat
+
+# config the ssh variant
+git config --global ssh.variant ssh
