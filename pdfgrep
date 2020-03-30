@@ -3,3 +3,6 @@ sudo apt-get install pdfgrep
 
 # grep for pdf files
 pdfgrep -R 'a pattern to search recursively from path' /some/path
+
+# pdf to text
+pdftotext myfile.pdf - | grep 'pattern'
