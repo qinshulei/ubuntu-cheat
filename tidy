@@ -1,0 +1,5 @@
+# html pretty command
+sudo apt-get install tidy
+
+# pretty html
+tidy inputfile.html
