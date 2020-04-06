@@ -1,0 +1,9 @@
+# mvn build command
+mvn clean package -Dmaven.test.skip=true -P release
+
+# mvn deploy , upload to artifactory
+mvn deploy -X -P release
+
+
+# call mvn plugin
+mvn groupId:artifactId:version:goal
