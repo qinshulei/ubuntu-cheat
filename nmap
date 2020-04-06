@@ -1,2 +1,5 @@
 # scan all ips in the network
 nmap -sP 192.168.65.1/24
+
+# scan localhost
+nmap localhost
