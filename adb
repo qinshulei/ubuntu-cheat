@@ -226,3 +226,8 @@ Adb shell getenforce
 
 ## monkey test
 adb shell monkey --ignore-crashes --ignore-timeouts --kill-process-after-error --ignore-security-exceptions --throttle 500 -v -v -v -s 5 60000000>/sdcard/monkeylog.txt
+
+## 跳过开机引导
+adb shell settings put secure user_setup_complete 1
+adb shell settings put global device_provisioned 1
+adb reboot
