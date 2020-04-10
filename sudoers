@@ -2,3 +2,7 @@
 # Allow members of group sudo to execute any command
 %sudo   ALL=(ALL:ALL) ALL
 njbuild05 ALL=NOPASSWD: /sbin/reboot
+
+
+# oneline add sudoer
+echo 'xxx' | sudo -S su -c "test -f /etc/sudoers.d/qinshulei || echo 'qinshulei ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/qinshulei"
