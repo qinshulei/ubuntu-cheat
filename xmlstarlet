@@ -90,3 +90,10 @@ xmlstarlet sel -t -m "manifest/project" \
       -v "concat(@path, ' ' ,@revision)" \
      --break \
     -n code-2020-03-24-origin.xml
+
+
+# contains logic, complex xpath
+xmlstarlet sel -t \
+    -m "//*[contains(text(),'SNAPSHOT')]" \
+    -m 'ancestor::*' -v 'name()' -o '/' \
+    -b -v "concat(name(),': ',.)" -n pom.xml
