@@ -231,3 +231,6 @@ adb shell monkey --ignore-crashes --ignore-timeouts --kill-process-after-error -
 adb shell settings put secure user_setup_complete 1
 adb shell settings put global device_provisioned 1
 adb reboot
+
+## 打开飞行模式
+adb shell settings put global airplane_mode_on 1
