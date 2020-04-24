@@ -234,3 +234,15 @@ adb reboot
 
 ## 打开飞行模式
 adb shell settings put global airplane_mode_on 1
+
+## adb logcat
+adb wait‐for‐device && adb logcat ‐b all
+
+## adb logcat crash
+adb wait‐for‐device && adb logcat ‐b crash
+
+## adb show apk path
+adb shell "pm path xxxxx.xxx.xxx"
+
+## adb remount
+adb wait‐for‐device && adb root && adb disable‐verity && adb reboot && adb wait‐for‐device && adb root && adb remount
