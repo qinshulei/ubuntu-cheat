@@ -50,3 +50,7 @@ iptables -A INPUT -p tcp --dport 8000 -j DROP
 # batch edit
 iptables-save > /tmp/ipt.txt
 iptables-restore < /tmp/ipt.txt
+
+
+# 端口转发
+iptables -t nat -A oem_nat_pre -d WANIP -p 协议 --dport WANPORT -j DNAT --to LANIP:LANPORT
