@@ -1,0 +1,2 @@
+# pip install xlrd
+pip install xlrd http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
