@@ -1,0 +1,6 @@
+https://tika.apache.org/
+
+# Check if an Internet resource contains a specific keyword
+curl http://.../document.doc \
+  | java -jar tika-app.jar --text \
+  | grep -q keyword

@@ -1,0 +1,7 @@
+https://lucene.apache.org/
+
+# index file by command
+java org.apache.lucene.demo.IndexFiles -docs {path-to-lucene}/src
+
+# search file by command
+java org.apache.lucene.demo.SearchFiles

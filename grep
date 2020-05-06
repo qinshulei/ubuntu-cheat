@@ -47,3 +47,5 @@ cat default.xml | grep "revision" | grep -v default| grep -v -E "[0-9a-z]{21}" |
 
 # fix Binary file (standard input) matches
 cat xxxx | grep -a xxxx
+
+# office doc excel grep

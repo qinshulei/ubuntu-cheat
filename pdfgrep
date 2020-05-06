@@ -6,3 +6,9 @@ pdfgrep -R 'a pattern to search recursively from path' /some/path
 
 # pdf to text
 pdftotext myfile.pdf - | grep 'pattern'
+
+
+# search pdf
+```
+find /path -iname '*.pdf' -exec pdfgrep pattern {} +
+```
