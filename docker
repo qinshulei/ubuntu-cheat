@@ -184,3 +184,11 @@ for docker_container_name in $(docker ps --format '{{.Names}}' | grep opengrok);
     echo "####################  $docker_container_name"
     docker exec -it  $docker_container_name bash -c 'ls /tomcat8/temp'
 done
+
+
+## one command show all volumn
+for contId in `docker ps -q`; do echo "Container Name: "   `docker ps -f "id=$contId" | awk '{print $NF}' | grep -v NAMES`; echo "Container Volume: " `docker inspect -f '{{.Config.Volumes}}' $contId`; docker inspect -f '{{ json .Mounts }}' $contId  | jq '.[]';   printf "\n"; done | less
+
+
+## one command show all overlay2
+for contId in `docker ps -q`; do echo "Container Name: "   `docker ps -f "id=$contId" | awk '{print $NF}' | grep -v NAMES`; docker inspect -f '{{ json .GraphDriver }}' $contId  | jq '.[]';   printf "\n"; done | less

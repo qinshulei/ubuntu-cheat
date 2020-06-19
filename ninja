@@ -1,0 +1,17 @@
+# query target input and output
+prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-aosp_arm.ninja  -t query droid
+
+# query all target
+prebuilts/build-tools/linux-x86/bin/ninja -f out/combined-aosp_arm.ninja  -t targets depth 1 | less
+
+# all build trace data, read by chrome chrome://tracing
+$OUT_DIR/build.trace.gz
+
+# build key log
+verbose.log.gz      every command run, along with its outputs. This is similar to the  previous `m showcommands` option.
+error.log      list of actions that failed during the build, and their outputs.
+soong.log      verbose debug information from soong_ui
+
+# the full (extremely large) compiled list of targets
+${OUT}/build-<product>*.ninja
+${OUT}/soong/build.ninja
