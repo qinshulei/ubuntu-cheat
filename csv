@@ -1,0 +1,5 @@
+# convert json to csv
+cat xxx.json | jq -r '.opts' | jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' > all-project.csv
+
+# convert json to csv
+jq -r '.opts[] | [.value, .label, .pm] | @csv' filein.json > fileout2.csv
