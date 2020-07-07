@@ -1,0 +1,2 @@
+# reverse string
+ls ${deb_type}-release_* | awk -F'-release_' '{print $2}' |  rev  | cut -d '-' -f 3- | rev | uniq

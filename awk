@@ -28,3 +28,6 @@ function get_lines(){
 
 # filter commit-msg summary
 echo '[xxx][xxx][xxxx][jira_project-451]xxxxxx' | cut -d"["  --output-delimiter=" " -f 1- | cut -d"]"  --output-delimiter=" " -f 1- | tr " " "\n" | awk -F' ' '/jira_project_*/{print}'
+
+# split field by string
+grep '\-release_' | awk -F'-release_' '{print $1}'
