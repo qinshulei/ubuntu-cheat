@@ -45,6 +45,9 @@ cat default.xml | grep -v "revision" | grep -v "</" | grep -v "linkfile" | grep 
 # check manifest have special branch, not sha1 or tag
 cat default.xml | grep "revision" | grep -v default| grep -v -E "[0-9a-z]{21}" | grep -v "refs/tags/"
 
+# check manifest have branch out or use branch
+cat default.xml | grep -v "refs" | grep -v -E "[0-9a-z]{40}" | grep -v '<linkfile'| grep -v '<copyfile' | grep -v "  </project>" | grep project
+
 # fix Binary file (standard input) matches
 cat xxxx | grep -a xxxx
 
