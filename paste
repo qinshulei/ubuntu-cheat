@@ -1,0 +1,2 @@
+# combine two file content
+paste manfiest_list.txt manfiest_list_static.txt

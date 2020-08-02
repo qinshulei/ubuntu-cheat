@@ -33,7 +33,7 @@ while true;do repo sync -c --force-sync && break; done
 repo forall -c 'commitID=`git log --before "2018-10-9 01:00" -1 --pretty=format:"%H"`; git reset --hard $commitID'
 
 # clean code
-epo forall -j 24 -c 'pwd;
+repo forall -j 24 -c 'pwd;
      git clean -dfx 2>&1 > /dev/null || true;
      git reset --hard 2>&1 > /dev/null || true;
      git checkout -f 2>&1 > /dev/null || true;
@@ -48,3 +48,38 @@ repo forall -j 24 -c 'pwd;
      git cherry-pick --abort 2>&1 > /dev/null || true;
      git am --abort 2>&1 > /dev/null || true;
      git rebase --abort 2>&1 > /dev/null || true' > /dev/null
+
+# repo forall status
+repo forall -c '
+echo "###### $REPO_PROJECT" | tee -a /tmp/repo_forall.log
+git status 2>&1 | tee -a /tmp/repo_forall.log
+'
+
+# change all author
+repo forall -c '
+git config user.name "CUSTOMER ACCOUNT"
+git config user.email "CUSTOMER_ACCOUNT@CUSTOMER_DOMAIN.com"
+'
+
+# dump change list
+
+echo 'Project,Commit,Name,Email,Summary' /tmp/repo_forall_changelist.csv
+repo forall -pc '
+git log --committer=@thundersoft.com --pretty=format:$REPO_PROJECT,%h,%an,%ae,%s >> /tmp/repo_forall_changelist.csv
+'
+
+# open it with excel : /tmp/repo_forall_changelist.csv
+
+
+# all remote and fetch code
+repo forall -c 'git remote add upstream ssh://xxx@upstream_gerrit/parent_path/$REPO_PROJECT.git'
+repo forall -c 'git fetch upstream'
+
+# baseline upgrade
+repo forall -c '
+  echo "###### $REPO_PROJECT" | tee -a /tmp/merge_r10_baseline.log
+  git fetch origin Qcom_baseline
+  git merge origin/Qcom_baseline --no-edit --no-stat --log=300 --no-ff -m "merge new baseline Snapdragon_High_XXX r10" 2>&1 | tee -a /tmp/merge_r10_baseline.log
+'
+
+

@@ -1,0 +1,3 @@
+# dump the so find symbols
+$ objdump -T ~/Downloads/libmmparser_lite.so | grep GetClipPSSHData
+000000000007a70c g    DF .text	0000000000000070  Base        _ZN10FileSource15GetClipPSSHDataEPhPj
