@@ -103,6 +103,4 @@ xmlstarlet sel -t -m '//project[@name="general/platform"]' -v '@path'  -n defaul
 
 
 # edit xml value
-xmlstarlet edit \
-  --update "//project[@name="general/platform"]/@revision" \
-  --value  "xxxxx" default.xml
+xmlstarlet edit -L --update '//project[@name="abl/tianocore/edk2"]/@revision' --value "r-xxx" default.xml
