@@ -36,3 +36,6 @@ echo abc | sed '1i<xml>' | sed '$a</xml>'
 
 # remove first char / and last char / each line
 sed -E 's#^([^/]*)/#\1#g; s#/([^/]*)$#\1#g'
+
+# short gerrit change ref
+echo 'platform/vendor/qcom-opensource/core-utils refs/changes/24/2826/3' | sed -r 's#(.*) refs/changes/[1-9]+/(.*)#\1 \2#g'

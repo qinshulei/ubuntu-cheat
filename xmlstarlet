@@ -97,3 +97,12 @@ xmlstarlet sel -t \
     -m "//*[contains(text(),'SNAPSHOT')]" \
     -m 'ancestor::*' -v 'name()' -o '/' \
     -b -v "concat(name(),': ',.)" -n pom.xml
+
+# xml read prop
+xmlstarlet sel -t -m '//project[@name="general/platform"]' -v '@path'  -n default.xml
+
+
+# edit xml value
+xmlstarlet edit \
+  --update "//project[@name="general/platform"]/@revision" \
+  --value  "xxxxx" default.xml

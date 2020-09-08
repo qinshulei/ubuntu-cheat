@@ -1,0 +1,2 @@
+# get all branched project
+cat default.xml | grep -v 'revision' | grep '<project' | awk -F' ' '{print $2}' | awk -F'=' '{print $2}' | awk -F'"' '{print $2}' | sort

@@ -8,3 +8,6 @@ watch -d 'ls -l|grep filename'
 
 # watch uptime, don't show the time header
 watch -t -d uptime
+
+# watch file changes
+watch -n 0.1 ls <your_folder>
