@@ -1,0 +1,3 @@
+# convert all csv files to xlsx
+
+soffice --convert-to xlsx:"Calc MS Excel 2007 XML" *.csv --headless

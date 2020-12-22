@@ -103,7 +103,7 @@ xmlstarlet sel -t -m '//project[@name="general/platform"]' -v '@path'  -n defaul
 
 # xml filter manifest group,get common revision
 xmlstarlet sel -t -m '//project[contains(@groups,"common") and @upstream="r-common"]' -v 'concat(@name ," " ,@revision)'  -n manifest_static.xml
- xmlstarlet sel -t -m '//project[contains(@groups,"common") and @upstream="r-common"]' -v '@name' -n default.xml
+xmlstarlet sel -t -m '//project[contains(@groups,"common") and @upstream="r-common"]' -v '@name' -n default.xml
 
 # edit xml value
 xmlstarlet edit -L --update '//project[@name="abl/tianocore/edk2"]/@revision' --value "r-xxx" default.xml
