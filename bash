@@ -74,7 +74,7 @@ children_projects=( $(repo list -n) )
 
 # declare array.
 declare -A animals
-animals=( ["moo"]="cow" ["woof"]="dog")
+animals=( ["moo"]="cow" ["woof"]="dog" )
 declare -A animals=( ["moo"]="cow" ["woof"]="dog")
 echo "${animals[moo]}"
 for sound in "${!animals[@]}"; do echo "$sound - ${animals[$sound]}"; done
