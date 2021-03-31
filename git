@@ -122,6 +122,7 @@ git worktree add yourpath your-branch
 git config --global http.sslVerify false
 
 # config git
+<<<<<<< HEAD
 HOME=/dev/null GIT_CONFIG_NOSYSTEM=1 git fetch --all
 
 # show commit change with file list
@@ -189,3 +190,7 @@ git log --stat
 
 # config the ssh variant
 git config --global ssh.variant ssh
+HOME=/dev/null GIT_CONFIG_NOSYSTEM=1 git fetch --all
+
+# commit format
+git log --pretty=format:"%h %ce ----------------- %s"

@@ -6,3 +6,7 @@ apropos "string or phrase"
 
 # search section
 apropos -s 1 delete
+
+# example
+$ apropos ipcalc
+ipcalc (1)           - An IPv4 Netmask/broadcast/etc calculator
